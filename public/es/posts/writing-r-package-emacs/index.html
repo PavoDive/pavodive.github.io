@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="es" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Escribiendo un Paquete para R con Emacs | Recordatorios Para Mi Yo Futuro</title>
+<meta name="keywords" content="R, emacs, ESS">
+<meta name="description" content="Guía paso a paso para escribir paquetes de R con emacs">
+<meta name="author" content="Pavodive">
+<link rel="canonical" href="https://example.org/es/posts/writing-r-package-emacs/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://example.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://example.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://example.org/posts/writing-r-package-emacs/">
+<link rel="alternate" hreflang="es" href="https://example.org/es/posts/writing-r-package-emacs/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://example.org/es/posts/writing-r-package-emacs/">
+  <meta property="og:site_name" content="Recordatorios Para Mi Yo Futuro">
+  <meta property="og:title" content="Escribiendo un Paquete para R con Emacs">
+  <meta property="og:description" content="Guía paso a paso para escribir paquetes de R con emacs">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-11T00:00:00+00:00">
+    <meta property="article:tag" content="R">
+    <meta property="article:tag" content="Emacs">
+    <meta property="article:tag" content="ESS">
+      <meta property="og:image" content="https://example.org/images/papermod-cover.png">
+      <meta property="og:see_also" content="https://example.org/es/posts/spanish2/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://example.org/images/papermod-cover.png">
+<meta name="twitter:title" content="Escribiendo un Paquete para R con Emacs">
+<meta name="twitter:description" content="Guía paso a paso para escribir paquetes de R con emacs">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://example.org/es/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Escribiendo un Paquete para R con Emacs",
+      "item": "https://example.org/es/posts/writing-r-package-emacs/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Escribiendo un Paquete para R con Emacs",
+  "name": "Escribiendo un Paquete para R con Emacs",
+  "description": "Guía paso a paso para escribir paquetes de R con emacs",
+  "keywords": [
+    "R", "emacs", "ESS"
+  ],
+  "articleBody": "Este artículo ofrece una guía paso a paso para escribir paquetes de R utilizando el modo ESS de emacs (Emacs Speaks Statistics). Al finalizarla, vos habrás creado un paquete sencillo llamado dummyaddition, que puede hacer la sencilla tarea de sumar dos números o concatenar dos cadenas de texto.\n¿Por Qué Emacs? Emacs es una de esas piezas de software que ha pasado la prueba del tiempo. Aunque algunos pueden argumentar que la edad es una desventaja, yo pienso que el hecho de que emacs permanezca relevante después de más de 40 años es una prueba irrefutable de su diseño robusto y de su adaptabilidad a las necesidades modernas.\nEmacs es mucho más que solo un editor de texto o un IDE —es una herramienta poderosa que me ha permitido desarrollar un flujo de trabajo eficiente.\nAquí les presento algunas de las razones por las que prefiero emacs:\nEficiencia Centrada en Teclado Emacs está basado en la línea de comando, lo que significa que casi toda acción posible puede ser ejecutada a través del teclado. Yo rara vez utilizo el mouse durante mi trabajo. Depender del mouse pude causar dolor o molestia en manos y brazos, y desperdicia tiempo en movimientos innecesarios.\nExpansibilidad y Personalización Emacs es increíblemente expansible y altamente personalizable. Ya sea que prefirás mantenerlo simple o convertirlo en una máquina compleja y poderosa, podés ajustarlo a tus necesidades y para satisfacer tus deseos específicos.\nFácil de Aprender A pesar de que algunas personas dicen que la curva de aprendizaje de emacs es empinada, yo opino distinto. Emacs sin modificaciones (o vainilla, como se le llama en inglés) es muy fácil de usar y viene con una excelente documentación. Podés comenzar utilizando el mouse mientras te familiarizás con los atajos de teclado. No será una diferencia muy grande con lo que seguramente estás usando ahora. Con el paso del tiempo, irás aprendiendo a ampliar y personalizar emacs para que sea más eficiente en tu flujo de trabajo.\nSoftware Libre y de Código Abierto Emacs es libre y gratuito. Podés instalarlo en cualquier sistema operativo sin costo. No sólo no tendrás que pagar, si no que no te van a quitar nada: ni tus datos, ni tus interacciones con el software, ni tu privacidad.\nQue sea de código abierto significa que podés modificar emacs e incluso compartir tus modificaciones con otros sin que tengás que preocuparte por asuntos legales. Emacs representa la verdadera libertad de software.\n¿Por Qué un Paquete? Uno de los objetivos fundamentales del desarrollo de software es la automatización. Tareas que hacemos frecuentemente deberían hacerse más fáciles y rápidas de ejecutar. Es un escenario común: escribís una función una vez, y luego la necesitás otra y otra vez…\nEn lugar de reescribir la misma función múltiples veces (créeme, lo he hecho y no es divertido), o desperdiciar tiempo buscando por donde la escribiste la última vez, es mejor consolidar esas funciones en un paquete (o librería). Un paquete te permite cargar y reutilizar sin mayor esfuerzo esas funciones cuando sea que las necesités.\nCrear un paquete también significa que podés compartir tus funciones con otros que podrían estar enfrentando el mismo problema que ya resolviste. Escribiendo paquetes estás contribuyendo a un ambiente colaborativo. Después de todo, estoy seguro que en algún momento has dependido fuertemente de paquetes de R escritos por otros, así que ¿por qué no devolver un poco de ese beneficio?\nResultado Final Siguiendo esta guía paso a paso, crearás un nuevo paquete llamado dummyaddition. Este paquete, a pesar de ser muy básico, demostrará los pasos esenciales involucrados en la creación de un paquete para R con emacs y ESS. Seguramente albergarás tu versión en tu repositorio de GitHub, pero si querés ver la mía como referencia, aquí está el enlace: dummyaddition.\nPaso a Paso Magit para Control de Versiones Crear un Repositorio en GitHub El primer paso es crear un nuevo repositorio en tu cuenta de GitHub. Yo he llamado al mío dummyaddition, pero podés escoger un nombre que tenga sentido para tu proyecto. Aunque llenar el campo descripción es opcional, de veras te recomiendo que lo hagas —es muy útil tener una descripción clara de cada repositorio.\nTené en mente que las convenciones que CRAN establece para nombrar paquetes sólo permiten caracteres ASCII y números. Evitá usar caracteres especiales como guiones, subrayados o puntos en el nombre.\nTambién tendrás la opción de hacer tu repositorio público o privado. Si estás planeando compartir tu código (a lo que te exhorto), hacé que el repositorio sea público.\nAntes de crear el repositorio, configurá los siguientes ajustes menores pero muy importantes:\nInicializá con un README.md: Marcá esta casilla. Usaremos este archivo posteriormente. Añadí un archivo .gitignore: Seleccioná la plantilla para R. Esto nos asegura que Git ignora archivos innecesarios para nuestro proyecto, tales como .history, que no agregan ningún valor. Escogé una licencia: Github nos ofrece varias opciones de licenciamiento de nuestro software. Dos muy comunes son la MIT License y la GNU General Public License v3.0. Aseguráte de leer sobre sus diferencias, ya que ellas pueden afectar cómo puede usarse tu software. Para este tutorial, he escogido la licencia GNU General Public License v3.0. Adicionalmente, chequeá las licencias de los paquetes de R que planeás utilizar en tu código. Algunas licencias requerirán que adoptés licencias compatibles o menos restrictivas en tu paquete. Una vez has configurado estos ajustes, hacé click en Create Repository.\nMagit Magit es un paquete de emacs que actúa como un híbrido entre un cliente gráfico de Git y la interfaz de línea de comando estándar. Magit nos ofrece comandos amigables para las acciones de Git. Yo uso Magit porque simplifica las interacciones con Git, y sólo necesito recordar unos pocos comandos básicos. Es bastante amigable, y si quieres explorar los comandos de Git que Magit ejecuta internamente, están fácilmente disponibles para que puedas auditarlos o estudiarlos.\nSi Git no está instalado en tus sistema, podés seguir las instrucciones oficiales de instalación aquí.\nDespués de instalar Git, configurá tu nombre y email para asociar los commits con tu identidad:\ngit config --global user.name \"John Doe\" git config --global user.email johndoe@example.com Posteriormente, instalá Magit para emacs. Si no lo has instalado aún, re recomiendo que lo hagás vía MELPA, el repositorio de paquetes de emacs. Añadí las siguientes líneas a tu archivo .emacs:\n(require 'package) (add-to-list 'package-archives '(\"melpa\" . \"https://melpa.org/packages/\") t) Seleccioná el bloque de texto que acabas de pegar y evaluálo en emacs con M-x eval-region RET, y luego refrescá tu lista de paquetes con:\nM-x package-refresh-contents RET Ahora podés instalar Magit y sus dependencias ejecutando:\nM-x package-install RET magit RET Para asegurar que todo funciona como esperamos, reiniciá tu sesión de emacs. Esto restablece el load-path y evita problemas potenciales asociados a configuraciones anteriores.\nClonando el Repositorio Ahora es el momento de clonar el repositorio de GitHub a tu computador.\nNavegá al directorio donde querés clonar el repositorio. Por ejemplo, si querés clonarlo en ~/Documentos, abrí el modo Dired de emacs con C-x D y escribí ~/Documents para abrir el directorio correspondiente.\nAhora corré los siguientes comandos en emacs:\nM-x magit-clone Magit te preguntará de dónde querés clonar el repositorio. Escogé [u] para URL. Luego pegá la URL del repositorio de tu página de GitHub. La podés encontrar haciendo click en el botón verde que dice “\u003c\u003e Code” y copiás la URL para HTTPS. Por ejemplo:\nhttps://github.com/PavoDive/dummyaddition.git Pegá esta URL en el minibuffer de Magit.\nMagit te va a pedir confirmar el nombre del subdirectorio en el que el repositorio será clonado. Por defecto, él nos sugiere el nombre del repositorio (en nuestro caso dummyaddition). Yo recomiendo que lo mantengás así para guardar consistencia.\nTambién te preguntará “Set remote.pushDefault to origin? (y or n)” (¿Establecer remote.pushDefault a origin? (s o n)). Ya que este es el comienzo de un nuevo repositorio, podés escoger yes (y) con tranquilidad.\nDespués de unos instantes, Magit terminará el proceso de clonado y mostrará un nuevo buffer con los detalles del repositorio y el commit más reciente. Podés presionar TAB para expandir los detalles de los commits.\nPara verificar que el repositorio ha sido clonado, refrescá el buffer de Dired presionando g. Deberías ver un nuevo directorio —dummyaddition— dentro de tu directorio ~/Documents. Navegá a este directorio y vas a encontrar:\ndrwxrwxr-x 8 gp gp 4.0K Jan 11 17:44 .git -rw-rw-r-- 1 gp gp 671 Jan 11 17:44 .gitignore -rw-rw-r-- 1 gp gp 35K Jan 11 17:44 LICENSE -rw-rw-r-- 1 gp gp 26 Jan 11 17:44 README.md Estos incluyen los archivos y directorios creados durante la configuración de GitHub:\n.gitignore: Preconfigurado para ignorar archivos innecesarios. LICENSE: La licencia que escogiste durante la configuración inicial. README.md: El archivo README inicial. .git/: Un directorio oculto que contiene metadata sobre el control de versiones. Listo Para Comenzar a Desarrollar ¡Ahora estás listo para comenzar a desarrollar tu paquete de R! 🎉\nPaquetes Requeridos Para hacer la escritura de paquetes de R más fácil y eficiente, necesitamos instalar dos paquetes esenciales:\nrmarkdown: Convierte documentos de R Markdown a otros varios formatos. devtools: Una colección de herramientas de desarrollo de paquetes. Literalmente ¡un paquete que te ayuda a desarrollar paquetes! Si estos no están instalados aún, comenzá una nueva sesión de R en tu directorio Documents ejecutando M-x R en emacs. Una vez la sesión comience, ingresá los siguientes comandos:\ninstall.packages(\"rmarkdown\") install.packages(\"devtools\") Estos paquetes podrían requerir dependencias adicionales. Ya que el proceso de instalación varía dependiendo de tu sistema, es posible que encontrés errores. Si es así ¡no te preocupés! Respirá profundo, buscá en DuckDuckGo los errores y resolvé cualquier problema que encontrés.\nMantené la Calma e Intentá de Nuevo\nDespués de que hayás instalado los paquetes, cargálos en tu sesión de R:\nlibrary(rmarkdown) library(devtools) Creá el Paquete Ahora que hemos configurado las herramientas necesarias, vamos a crear el paquete. En tu sesión de R, ejecutá:\ncreate(\"dummyaddition\") Esto creará un nuevo paquete de R llamado dummyaddition, dentro del correspondiente directorio dummyaddition.\n⚠ Nota Importante: Aseguráte de que la sesión de R no está dentro del directorio dummyaddition cuando ejecutés devtools::create. De lo contrario tratará de crear un paquete anidado (es decir, un directorio dummyaddition dentro de otro directorio dummyaddition), lo cual puede ser problemático.\nCuando ejecuta, la función muestra la siguiente información en tu consola de R:\n✔ Setting active project to \"/home/gp/Documents/dummyaddition\". ✔ Creating R/. ✔ Writing DESCRIPTION. Package: dummyaddition Title: What the Package Does (One Line, Title Case) Version: 0.0.0.9000 Authors@R (parsed): * First Last [aut, cre] Description: What the package does (one paragraph). License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a license Encoding: UTF-8 Roxygen: list(markdown = TRUE) RoxygenNote: 7.3.2 ✔ Writing NAMESPACE. ✔ Setting active project to \"\". ¿Qué Fue Creado? Notarás los siguientes elementos en tu directorio dummyaddition:\nDESCRIPTION: Describe la metadata de tu paquete (por ejemplo, nombre, autor, versión y descripción). Editá este archivo siguiendo las instrucciones en él. NAMESPACE: Maneja las funciones importadas y exportadas. Este archivo se genera automáticamente—evitá editarlo manualmente. R/: Un directorio para que guardés las funciones y código de tu paquete. En este momento estará vacío. En este punto, ya tenemos el esqueleto del paquete. ¡Ahora escribamos el código!\nEscribiendo el Código Vamos a definir la función central de nuestro paquete. Creá un nuevo archivo llamado addition.R dentro del directorio R/ y en él ingresá el siguiente código:\n1 2 3 4 5 6 7 8 9 10 addition \u003c- function(a, b) { if (length(a) \u003e 1 || length(b) \u003e 1) { stop(\"I can't accept a vector. Sorry.\") } if (is.numeric(a) == TRUE \u0026\u0026 is.numeric(b) == TRUE) { a + b }else { paste0(as.character(a), as.character(b)) } } Por supuesto, tu paquete puede incluir múltiples funciones de complejidad variable. Como recomendación general, poné cada función exportada en su propio archivo. Está bien incluir funciones auxiliares (internas) en el mismo archivo que las utiliza.\nDocumentando las Funciones La documentación es un aspecto crucial del desarrollo de paquetes, y con devtools fácilmente la podés manejar utilizando roxygen2. Esto involucra la escritura de comentarios especiales en el encabezado de cada función para describe su propósito, uso y argumentos.\nVamos a documentar nuestra función addition añadiendo el siguiente texto encima de su definición en el archivo addition.R:\n#' Add two numeric values or paste two character values. #' #' This function takes two single values and adds them, #' if they are numeric, or pastes them together, otherwise. #' The function checks the length of each argument, and #' returns an error if any of the arguments has length #' greater than one. #' #' @usage addition(a, b)n #' @keywords addition, pasting, sum. #' @param a A single value that is numeric, character or that #' can be coerced to character. #' @param b A single value that is numeric, character or that #' can be coerced to character. #' @return A numeric value with the sum of a and b, if both #' are numeric, or a string if both values can be coerced to #' to string. #' @examples #' # Adding numerc values #' addition(1, 6) #' # Pasting strings together #' addition(\"nice \", \"function\") #' @export Puntos Clave Sobre la Documentación: #' denota un comentario de documentación. La etiqueta @export es esencial para hacer disponible nuestra función a usuarios del paquete. Las funciones sin esta etiqueta son tratadas como internas. Etiquetas como @param, @return, @keywords y @examples ofrecen detalles estructurados a cerca de la función. Una Nota Sobre la Importación de Otros Paquetes Si tu paquete depende de librerías externas, deberás incluir la etiqueta @import en tu documentación, así:\n#' @import data.table Esto asegura que el paquete importa correctamente la funcionalidad externa.\nCon la función principal implementada y documentada, estás en camino de construir un paquete funcional de R . ¡Gran trabajo hasta ahora! 🎉\nConstruir la Documentación Para construir la documentación para tu paquete, aseguráte de que tu directorio de trabajo está establecido como el directorio raíz de tu paquete (dummyaddition). Si no has cerrado tu sesión de R, simplemente podés usar:\nsetwd(\"dummyaddition\") Si ya habías cerrado la sesión, simplemente comenzá una nueva sesión de R en el directorio correcto y cargá de nuevo las librerías (devtools y rmarkdown) usando library().\nAhora, usá la función devtools::document(), un wrapper de la función roxygen2::roxygenize(), para generar la documentación. Ejecutá:\ndocument() Esto produce el siguiente output:\nℹ Updating dummyaddition documentation ℹ Loading dummyaddition Writing NAMESPACE Writing addition.Rd Veamos en detalle lo que ocurre cuando corrés este comando:\nEl archivo NAMESPACE fue actualizado automáticamente: ahora incluye la información requerida para exportar la función addition. El directorio man fue creado, si no existía ya. Este directorio contiene archivos de documentación para sus funciones exportadas, escritos en formato .Rd. Por ejemplo: addition.Rd: Este archivo fue generado a partir de los comentarios especiales en el archivo addition.R. Contiene documentación en un formato reconocido por R. Nota: No modifiqués este archivo directamente, ya que es generado automáticamente. En este punto, ya podés acceder a la ayuda de tu función, aún cuando el paquete no ha sido aún instalado. Para hacerlo, seguí este proceso específico:\n\u003e ? + addition En este código\n\u003e representa el prompt de R. + indica una línea de continuación (una característica de emacs). Esto quiere decir: escribí ? y cuando emacs te ofrezca la siguiente línea, escribí addition.\nCuando corrés este comando, vas a ver una página de ayuda para tu función cuidadosamente formateada, presentada como si tu paquete estuviera completamente instalado.\nℹ Rendering development documentation for \"addition\" addition package:dummyaddition R Documentation Add two numeric values or paste two character values. Description: This function takes two single values and adds them, if they are numeric, or pastes them together, otherwise. The function checks the length of each argument, and returns an error if any of the arguments has length greater than one. Usage: addition(a, b) Arguments: a: A single value that is numeric, character or that can be coerced to character. b: A single value that is numeric, character or that can be coerced to character. Value: A numeric value with the sum of a and b, if both are numeric, or a string if both values can be coerced to to string. Examples: # Adding numerc values addition(1, 6) # Pasting strings together addition(\"nice \", \"function\") Esto confirma que tu documentación está funcionando correctamente y que tu paquete está bien estructurado.\nUn PDF Bonito Vamos a generar un PDF bien formateado para nuestro paquete—exactamente como los que has visto en los paquetes famosos de R.\nPara producir este PDF, vas a necesitar utilizar el terminal de emacs (shell) o eshell. Abrílo con M-x shell o con M-x eshell y navegá al directorio padre de tu proyecto (Documents en este ejemplo). Luego corré el siguiente comando en la terminal:\nR CMD Rd2pdf dummyaddition Esto generará un archivo PDF llamado dummyaddition.pdf en el directorio Documentos.\n⚠ Nota Importante: Podrías necesitar LaTeX y Pandoc instalados en tu sistema para poder crear el PDF. Si no están instalados, buscá en línea instrucciones específicas de instalación para tu plataforma (y preparáte un café, eso puede requerir tiempo y paciencia).\nActualizá el Archivo README.md El archivo README.md es la “cara” de tu paquete. Es lo que la gente ve primero cuando visitan tu repositorio (especialmente en GitHub), así que es importante actualizarlo con información relevante.\nComo mínimo, tu archivo README.md debe incluir:\nLo que tu paquete hace: Brinda una explicación clara y simple del problema que tu paquete resuelve. Cómo instalarlo: Incluye instrucciones de instalación. Por ejemplo, podés añadir lo siguiente si tu paquete está alojado en GitHub: devtools::install_github(\"yourusername/dummyaddition\") Reemplazá \"yourusername\"con tu usuario de GitHub y \"dummyaddition\" con el nombre de tu paquete.\nSubiendo tu Paquete Nuevo a GitHub Una vez has completado tu código, documentación y actualizaciones al archivo README.md, es hora de subir (push) tus cambios a GitHub. Magit hace este proceso fácil y eficiente.\nAbrí el buffer de Magit de tu repositorio, típicamente llamado magit: dummyaddition. Si no está abierto, lo podés activar con el comando:\nM-x magit-status Refrescá el status del repositorio presionando g en el buffer de Magit. Verás algo como esto:\nHead: main Initial commit Merge: origin/main Initial commit Push: origin/main Initial commit Untracked files (4) Unstaged changes (1) Recent commits Podés expandir secciones específicas (por ejemplo untracked files, unstaged changes, recent commits) presionando TAB.\nStaging y Committing Cambios Untracked files: Cuando expandís la sección “Untracked files”, verás archivos como DESCRIPTION, NAMESPACE, y directorios como man/ y R/. Estos son los nuevos archivos y directorios que hemos creado durante el proceso de desarrollo.\nStage estos cambios seleccionando el archivo o directorio y presionando s (de stage). Los archivos staged ahora aparecerán en la sección “Staged changes”. Unstaged changes: Vas a notar que el archivo README.md aparece aquí porque fue modificado (no creado nuevo). Stage estos cambios con s nuevamente. Magit podría preguntarte si querés stage todos los cambios —presioná y para confirmar.\nUna vez todos los cambios están staged en la sección “Staged changes”, hacé el commit de ellos presionando c (de commit). Un menú aparecerá. Presioná c nuevamente para crear el commit.\nEscribiendo el Mensaje de Commit Una vez comencés el proceso de commit, un buffer se abrirá para que escribás el mensaje de commit. Los mensajes de commit debe ser concisos y explicativos. Por ejemplo:\nTítulo: Resumí el commit claramente en una línea. Cuerpo (opcional): Adicioná más detalles si es necesario, especialmente si los cambios son complejos. Aquí está un ejemplo de mensaje de commit para nuestro trabajo:\nCódigo y Documentación Generada - Creada la función central `addition`. - Creada por auto-generación la documentación con roxygen2. - Actualizado el archivo README.md. Después de escribir tu mensaje de commit, guardálo presionando C-c C-c para confirmar y cerrar el buffer.\nEsto actualizará el buffer de magit, que ahora podrá decir algo como:\nUnmerged into origin/main (1) 56d6bd3 main Código y Documentación Generada Esto significa que tus cambios han sido commited localmente pero aún no hemos subido (pushed) al repositorio de GitHub.\nSubiendo (Pushing) a GitHub Para pushar tus cambios a GitHub, presioná P (de push) en el buffer de Magit. Un menú aparecerá, presioná p para subir tus cambios a origin/main.\nMagit podría preguntarte por tus credenciales de GitHub (usuario y password), si no las has configurado para SSH o autenticación con token. Ingresá la información requerida, y después de un momento, el buffer de Magit reflejará que los cambios han sido pushed:\nRecent commits 56d6bd3 origin/main Código y Documentación Generada 4b1b6c8 Initial commit En este punto tus cambios están activos en GitHub. Podés verificarlos visitando tu repositorio en GitHub.\nCompartí tu Paquete ¡Tu camino no está completo hasta que no compartás tu trabajo! A pesar de que este paquete resuelva un problema particular para vos, es bien probable que alguno de los 8 mil millones de humanos que poblamos este planeta 🌍 pueda enfrentar el mismo reto en el futuro. Compartir tu trabajo puede ayudarlos a ellos también.\nAquí hay algunas formas de compartir tu paquete:\nPublicá sobre él en tus redes sociales. Escribí un blog sobre lo que hace. Compartílo en plataformas como Hacker News o Lobste.rs. Mencionálo en foros o comunidades relevantes. Cualquier método que escojás, ¡no te olvidés de compartir tu excelente trabajo con el mundo!\n",
+  "wordCount" : "3520",
+  "inLanguage": "es",
+  "image": "https://example.org/images/papermod-cover.png","datePublished": "2025-01-11T00:00:00Z",
+  "dateModified": "2025-01-11T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Pavodive"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://example.org/es/posts/writing-r-package-emacs/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Recordatorios Para Mi Yo Futuro",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://example.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://example.org/es/" accesskey="h" title="Recordatorios Para Mi Yo Futuro (Alt + H)">Recordatorios Para Mi Yo Futuro</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                    <li>
+                        <a href="https://example.org/" title="🇬🇧"
+                            aria-label=":uk:">🇬🇧</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://example.org/es/archives/" title="Arhivo">
+                    <span>Arhivo</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/es/search/" title="Buscar">
+                    <span>Buscar</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org/es/tags/" title="Etiquetas">
+                    <span>Etiquetas</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://example.org/es/">Inicio</a>&nbsp;»&nbsp;<a href="https://example.org/es/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Escribiendo un Paquete para R con Emacs
+    </h1>
+    <div class="post-description">
+      Guía paso a paso para escribir paquetes de R con emacs
+    </div>
+    <div class="post-meta"><span title='2025-01-11 00:00:00 +0000 UTC'>enero 11, 2025</span>&nbsp;·&nbsp;17 min&nbsp;·&nbsp;Pavodive&nbsp;|&nbsp;Traducciones:
+<ul class="i18n_list">
+    <li>
+        <a href="https://example.org/posts/writing-r-package-emacs/">🇬🇧</a>
+    </li>
+</ul>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Tabla de Contenidos</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#por-qu%c3%a9-emacs" aria-label="¿Por Qué Emacs?">¿Por Qué Emacs?</a><ul>
+                        
+                <li>
+                    <a href="#eficiencia-centrada-en-teclado" aria-label="Eficiencia Centrada en Teclado">Eficiencia Centrada en Teclado</a></li>
+                <li>
+                    <a href="#expansibilidad-y-personalizaci%c3%b3n" aria-label="Expansibilidad y Personalización">Expansibilidad y Personalización</a></li>
+                <li>
+                    <a href="#f%c3%a1cil-de-aprender" aria-label="Fácil de Aprender">Fácil de Aprender</a></li>
+                <li>
+                    <a href="#software-libre-y-de-c%c3%b3digo-abierto" aria-label="Software Libre y de Código Abierto">Software Libre y de Código Abierto</a></li></ul>
+                </li>
+                <li>
+                    <a href="#por-qu%c3%a9-un-paquete" aria-label="¿Por Qué un Paquete?">¿Por Qué un Paquete?</a></li>
+                <li>
+                    <a href="#resultado-final" aria-label="Resultado Final">Resultado Final</a></li>
+                <li>
+                    <a href="#paso-a-paso" aria-label="Paso a Paso">Paso a Paso</a><ul>
+                        
+                <li>
+                    <a href="#magit-para-control-de-versiones" aria-label="Magit para Control de Versiones">Magit para Control de Versiones</a><ul>
+                        
+                <li>
+                    <a href="#crear-un-repositorio-en-github" aria-label="Crear un Repositorio en GitHub">Crear un Repositorio en GitHub</a></li>
+                <li>
+                    <a href="#magit" aria-label="Magit">Magit</a></li>
+                <li>
+                    <a href="#clonando-el-repositorio" aria-label="Clonando el Repositorio">Clonando el Repositorio</a></li></ul>
+                </li>
+                <li>
+                    <a href="#listo-para-comenzar-a-desarrollar" aria-label="Listo Para Comenzar a Desarrollar">Listo Para Comenzar a Desarrollar</a></li>
+                <li>
+                    <a href="#paquetes-requeridos" aria-label="Paquetes Requeridos">Paquetes Requeridos</a></li>
+                <li>
+                    <a href="#cre%c3%a1-el-paquete" aria-label="Creá el Paquete">Creá el Paquete</a><ul>
+                        
+                <li>
+                    <a href="#qu%c3%a9-fue-creado" aria-label="¿Qué Fue Creado?">¿Qué Fue Creado?</a></li></ul>
+                </li>
+                <li>
+                    <a href="#escribiendo-el-c%c3%b3digo" aria-label="Escribiendo el Código">Escribiendo el Código</a></li>
+                <li>
+                    <a href="#documentando-las-funciones" aria-label="Documentando las Funciones">Documentando las Funciones</a><ul>
+                        
+                <li>
+                    <a href="#puntos-clave-sobre-la-documentaci%c3%b3n" aria-label="Puntos Clave Sobre la Documentación:">Puntos Clave Sobre la Documentación:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#una-nota-sobre-la-importaci%c3%b3n-de-otros-paquetes" aria-label="Una Nota Sobre la Importación de Otros Paquetes">Una Nota Sobre la Importación de Otros Paquetes</a></li>
+                <li>
+                    <a href="#construir-la-documentaci%c3%b3n" aria-label="Construir la Documentación">Construir la Documentación</a><ul>
+                        
+                <li>
+                    <a href="#un-pdf-bonito" aria-label="Un PDF Bonito">Un PDF Bonito</a></li></ul>
+                </li>
+                <li>
+                    <a href="#actualiz%c3%a1-el-archivo-readmemd" aria-label="Actualizá el Archivo README.md">Actualizá el Archivo README.md</a></li>
+                <li>
+                    <a href="#subiendo-tu-paquete-nuevo-a-github" aria-label="Subiendo tu Paquete Nuevo a GitHub">Subiendo tu Paquete Nuevo a GitHub</a><ul>
+                        
+                <li>
+                    <a href="#staging-y-committing-cambios" aria-label="Staging y Committing Cambios">Staging y Committing Cambios</a></li>
+                <li>
+                    <a href="#escribiendo-el-mensaje-de-commit" aria-label="Escribiendo el Mensaje de Commit">Escribiendo el Mensaje de Commit</a></li>
+                <li>
+                    <a href="#subiendo-pushing-a-github" aria-label="Subiendo (Pushing) a GitHub">Subiendo (Pushing) a GitHub</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#compart%c3%ad-tu-paquete" aria-label="Compartí tu Paquete">Compartí tu Paquete</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Este artículo ofrece una guía paso a paso para escribir paquetes de R utilizando el modo ESS de emacs (Emacs Speaks Statistics). Al finalizarla, vos habrás creado un paquete sencillo llamado <code>dummyaddition</code>, que puede hacer la sencilla tarea de sumar dos números o concatenar dos cadenas de texto.</p>
+<h2 id="por-qué-emacs">¿Por Qué Emacs?<a hidden class="anchor" aria-hidden="true" href="#por-qué-emacs">#</a></h2>
+<p>Emacs es una de esas piezas de software que ha pasado la prueba del tiempo. Aunque algunos pueden argumentar que la edad es una desventaja, yo pienso que el hecho de que emacs permanezca relevante después de más de 40 años es una prueba irrefutable de su diseño robusto y de su adaptabilidad a las necesidades modernas.</p>
+<p>Emacs es mucho más que solo un editor de texto o un IDE —es una herramienta poderosa que me ha permitido desarrollar un flujo de trabajo eficiente.</p>
+<p>Aquí les presento algunas de las razones por las que prefiero emacs:</p>
+<h3 id="eficiencia-centrada-en-teclado">Eficiencia Centrada en Teclado<a hidden class="anchor" aria-hidden="true" href="#eficiencia-centrada-en-teclado">#</a></h3>
+<p>Emacs está basado en la línea de comando, lo que significa que casi toda acción posible puede ser ejecutada a través del teclado. Yo rara vez utilizo el mouse durante mi trabajo. Depender del mouse pude causar dolor o molestia en manos y brazos, y desperdicia tiempo en movimientos innecesarios.</p>
+<h3 id="expansibilidad-y-personalización">Expansibilidad y Personalización<a hidden class="anchor" aria-hidden="true" href="#expansibilidad-y-personalización">#</a></h3>
+<p>Emacs es increíblemente expansible y altamente personalizable. Ya sea que prefirás mantenerlo simple o convertirlo en una máquina compleja y poderosa, podés ajustarlo a tus necesidades y para satisfacer tus deseos específicos.</p>
+<h3 id="fácil-de-aprender">Fácil de Aprender<a hidden class="anchor" aria-hidden="true" href="#fácil-de-aprender">#</a></h3>
+<p>A pesar de que algunas personas dicen que la curva de aprendizaje de emacs es empinada, yo opino distinto. Emacs sin modificaciones (o vainilla, como se le llama en inglés) es muy fácil de usar y viene con una excelente documentación. Podés comenzar utilizando el mouse mientras te familiarizás con los atajos de teclado. No será una diferencia muy grande con lo que seguramente estás usando ahora. Con el paso del tiempo, irás aprendiendo a ampliar y personalizar emacs para que sea más eficiente en tu flujo de trabajo.</p>
+<h3 id="software-libre-y-de-código-abierto">Software Libre y de Código Abierto<a hidden class="anchor" aria-hidden="true" href="#software-libre-y-de-código-abierto">#</a></h3>
+<p>Emacs es libre y gratuito. Podés instalarlo en cualquier sistema operativo sin costo. No sólo <em>no tendrás que pagar</em>, si no que <strong>no te van a quitar nada</strong>: ni tus datos, ni tus interacciones con el software, ni tu privacidad.</p>
+<p>Que sea de código abierto significa que podés modificar emacs e incluso compartir tus modificaciones con otros sin que tengás que preocuparte por asuntos legales. Emacs representa la verdadera libertad de software.</p>
+<h2 id="por-qué-un-paquete">¿Por Qué un Paquete?<a hidden class="anchor" aria-hidden="true" href="#por-qué-un-paquete">#</a></h2>
+<p>Uno de los objetivos fundamentales del desarrollo de software es la <strong>automatización</strong>. Tareas que hacemos frecuentemente deberían hacerse más fáciles y rápidas de ejecutar. Es un escenario común: escribís una función una vez, y luego la necesitás otra y otra vez&hellip;</p>
+<p>En lugar de reescribir la misma función múltiples veces (créeme, lo he hecho y no es divertido), o desperdiciar tiempo buscando por donde la escribiste la última vez, es mejor consolidar esas funciones en un paquete (o librería). Un paquete te permite cargar y reutilizar sin mayor esfuerzo esas funciones cuando sea que las necesités.</p>
+<p>Crear un paquete también significa que podés compartir tus funciones con otros que podrían estar enfrentando el mismo problema que ya resolviste. Escribiendo paquetes estás contribuyendo a un ambiente colaborativo. Después de todo, estoy seguro que en algún momento has dependido fuertemente de paquetes de R escritos por otros, así que ¿por qué no devolver un poco de ese beneficio?</p>
+<h2 id="resultado-final">Resultado Final<a hidden class="anchor" aria-hidden="true" href="#resultado-final">#</a></h2>
+<p>Siguiendo esta guía paso a paso, crearás un nuevo paquete llamado <code>dummyaddition</code>. Este paquete, a pesar de ser muy básico, demostrará los pasos esenciales involucrados en la creación de un paquete para R con emacs y ESS. Seguramente albergarás tu versión en tu repositorio de GitHub, pero si querés ver la mía como referencia, aquí está el enlace: <a href="https://github.com/pavodive/dummyaddition"><code>dummyaddition</code></a>.</p>
+<h2 id="paso-a-paso">Paso a Paso<a hidden class="anchor" aria-hidden="true" href="#paso-a-paso">#</a></h2>
+<h3 id="magit-para-control-de-versiones">Magit para Control de Versiones<a hidden class="anchor" aria-hidden="true" href="#magit-para-control-de-versiones">#</a></h3>
+<h4 id="crear-un-repositorio-en-github">Crear un Repositorio en GitHub<a hidden class="anchor" aria-hidden="true" href="#crear-un-repositorio-en-github">#</a></h4>
+<p>El primer paso es crear un nuevo repositorio en tu cuenta de GitHub. Yo he llamado al mío <code>dummyaddition</code>, pero podés escoger un nombre que tenga sentido para tu proyecto. Aunque llenar el campo <strong>descripción</strong> es opcional, de veras te recomiendo que lo hagas —es muy útil tener una descripción clara de cada repositorio.</p>
+<p>Tené en mente que las convenciones que CRAN establece para nombrar paquetes sólo permiten caracteres ASCII y números. Evitá usar caracteres especiales como guiones, subrayados o puntos en el nombre.</p>
+<p>También tendrás la opción de hacer tu repositorio <strong>público</strong> o <strong>privado</strong>. Si estás planeando compartir tu código (a lo que te exhorto), hacé que el repositorio sea público.</p>
+<p>Antes de crear el repositorio, configurá los siguientes ajustes menores pero muy importantes:</p>
+<ul>
+<li><strong>Inicializá con un <code>README.md</code></strong>: Marcá esta casilla. Usaremos este archivo posteriormente.</li>
+<li><strong>Añadí un archivo <code>.gitignore</code></strong>: Seleccioná la plantilla para R. Esto nos asegura que Git ignora archivos innecesarios para nuestro proyecto, tales como <code>.history</code>, que no agregan ningún valor.</li>
+<li><strong>Escogé una licencia</strong>: Github nos ofrece varias opciones de licenciamiento de nuestro software. Dos muy comunes son la <em>MIT License</em> y la <em>GNU General Public License v3.0</em>. Aseguráte de leer sobre sus diferencias, ya que ellas pueden afectar cómo puede usarse tu software. Para este tutorial, he escogido la licencia <em>GNU General Public License v3.0</em>.
+<ul>
+<li>Adicionalmente, chequeá las licencias de los paquetes de R que planeás utilizar en tu código. Algunas licencias requerirán que adoptés licencias compatibles o menos restrictivas en tu paquete.</li>
+</ul>
+</li>
+</ul>
+<p>Una vez has configurado estos ajustes, hacé click en <strong>Create Repository</strong>.</p>
+<h4 id="magit">Magit<a hidden class="anchor" aria-hidden="true" href="#magit">#</a></h4>
+<p><strong>Magit</strong> es un paquete de emacs que actúa como un híbrido entre un cliente gráfico de Git y la interfaz de línea de comando estándar. Magit nos ofrece comandos amigables para las acciones de Git. Yo uso Magit porque simplifica las interacciones con Git, y sólo necesito recordar unos pocos comandos básicos. Es bastante amigable, y si quieres explorar los comandos de Git que Magit ejecuta internamente, están fácilmente disponibles para que puedas auditarlos o estudiarlos.</p>
+<p>Si Git no está instalado en tus sistema, podés seguir las instrucciones oficiales de instalación <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">aquí</a>.</p>
+<p>Después de instalar Git, configurá tu nombre y email para asociar los commits con tu identidad:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;John Doe&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email johndoe@example.com
+</span></span></code></pre></div><p>Posteriormente, instalá <strong>Magit</strong> para emacs. Si no lo has instalado aún, re recomiendo que lo hagás vía <a href="https://melpa.org/">MELPA</a>, el repositorio de paquetes de emacs. Añadí las siguientes líneas a tu archivo <code>.emacs</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span>
+</span></span><span class="line"><span class="cl">             <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;melpa&#34;</span> <span class="o">.</span> <span class="s">&#34;https://melpa.org/packages/&#34;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+</span></span></code></pre></div><p>Seleccioná el bloque de texto que acabas de pegar y evaluálo en emacs con <code>M-x eval-region RET</code>, y luego refrescá tu lista de paquetes con:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="nv">M-x</span> <span class="nv">package-refresh-contents</span> <span class="nv">RET</span>
+</span></span></code></pre></div><p>Ahora podés instalar Magit y sus dependencias ejecutando:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="nv">M-x</span> <span class="nv">package-install</span> <span class="nv">RET</span> <span class="nv">magit</span> <span class="nv">RET</span>
+</span></span></code></pre></div><p>Para asegurar que todo funciona como esperamos, reiniciá tu sesión de emacs. Esto restablece el <code>load-path</code> y evita problemas potenciales asociados a configuraciones anteriores.</p>
+<h4 id="clonando-el-repositorio">Clonando el Repositorio<a hidden class="anchor" aria-hidden="true" href="#clonando-el-repositorio">#</a></h4>
+<p>Ahora es el momento de clonar el repositorio de GitHub a tu computador.</p>
+<p>Navegá al directorio donde querés clonar el repositorio. Por ejemplo, si querés clonarlo en <code>~/Documentos</code>, abrí el modo Dired de emacs con <code>C-x D</code> y escribí <code>~/Documents</code> para abrir el directorio correspondiente.</p>
+<p>Ahora corré los siguientes comandos en emacs:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="nv">M-x</span> <span class="nv">magit-clone</span>
+</span></span></code></pre></div><p>Magit te preguntará de dónde querés clonar el repositorio. Escogé <code>[u]</code> para <strong>URL</strong>. Luego pegá la URL del repositorio de tu página de GitHub. La podés encontrar haciendo click en el botón verde que dice  &ldquo;&lt;&gt; Code&rdquo; y copiás la URL para HTTPS. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">https://github.com/PavoDive/dummyaddition.git
+</span></span></code></pre></div><p>Pegá esta URL en el minibuffer de Magit.</p>
+<p>Magit te va a pedir confirmar el nombre del subdirectorio en el que el repositorio será clonado. Por defecto, él nos sugiere el nombre del repositorio (en nuestro caso <code>dummyaddition</code>). Yo recomiendo que lo mantengás así para guardar consistencia.</p>
+<p>También te preguntará <strong>&ldquo;Set remote.pushDefault to origin? (y or n)&rdquo;</strong> (¿Establecer remote.pushDefault a origin? (s o n)). Ya que este es el comienzo de un nuevo repositorio, podés escoger <strong>yes (y)</strong> con tranquilidad.</p>
+<p>Después de unos instantes, Magit terminará el proceso de clonado y mostrará un nuevo buffer con los detalles del repositorio y el commit más reciente. Podés presionar <code>TAB</code> para expandir los detalles de los commits.</p>
+<p>Para verificar que el repositorio ha sido clonado, refrescá el buffer de Dired presionando <code>g</code>. Deberías ver un nuevo directorio —<code>dummyaddition</code>— dentro de tu directorio <code>~/Documents</code>. Navegá a este directorio y vas a encontrar:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">drwxrwxr-x  8 gp gp 4.0K Jan 11 17:44 .git
+</span></span><span class="line"><span class="cl">-rw-rw-r--  1 gp gp  671 Jan 11 17:44 .gitignore
+</span></span><span class="line"><span class="cl">-rw-rw-r--  1 gp gp  35K Jan 11 17:44 LICENSE
+</span></span><span class="line"><span class="cl">-rw-rw-r--  1 gp gp   26 Jan 11 17:44 README.md
+</span></span></code></pre></div><p>Estos incluyen los archivos y directorios creados durante la configuración de GitHub:</p>
+<ul>
+<li><code>.gitignore</code>: Preconfigurado para ignorar archivos innecesarios.</li>
+<li><code>LICENSE</code>: La licencia que escogiste durante la configuración inicial.</li>
+<li><code>README.md</code>: El archivo README inicial.</li>
+<li><code>.git/</code>: Un directorio oculto que contiene metadata sobre el control de versiones.</li>
+</ul>
+<h3 id="listo-para-comenzar-a-desarrollar">Listo Para Comenzar a Desarrollar<a hidden class="anchor" aria-hidden="true" href="#listo-para-comenzar-a-desarrollar">#</a></h3>
+<p>¡Ahora estás listo para comenzar a desarrollar tu paquete de R! 🎉</p>
+<h3 id="paquetes-requeridos">Paquetes Requeridos<a hidden class="anchor" aria-hidden="true" href="#paquetes-requeridos">#</a></h3>
+<p>Para hacer la escritura de paquetes de R más fácil y eficiente, necesitamos instalar dos paquetes esenciales:</p>
+<ul>
+<li><strong><code>rmarkdown</code></strong>: Convierte documentos de R Markdown a otros varios formatos.</li>
+<li><strong><code>devtools</code></strong>: Una colección de herramientas de desarrollo de paquetes. Literalmente ¡un paquete que te ayuda a desarrollar paquetes!</li>
+</ul>
+<p>Si estos no están instalados aún, comenzá una nueva sesión de R en tu directorio <code>Documents</code> ejecutando <code>M-x R</code> en emacs. Una vez la sesión comience, ingresá los siguientes comandos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#34;rmarkdown&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#34;devtools&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Estos paquetes podrían requerir dependencias adicionales. Ya que el proceso de instalación varía dependiendo de tu sistema, es posible que encontrés errores. Si es así ¡no te preocupés! Respirá profundo, buscá en DuckDuckGo los errores y resolvé cualquier problema que encontrés.</p>
+<figure class="align-center "><a href="/images/keep-calm-try-again.jpg" target="_blank">
+    <img loading="lazy" src="/images/keep-calm-try-again.jpg#center"/> </a><figcaption>
+            <p>Mantené la Calma e Intentá de Nuevo</p>
+        </figcaption>
+</figure>
+
+<p>Después de que hayás instalado los paquetes, cargálos en tu sesión de R:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">rmarkdown</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">devtools</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="creá-el-paquete">Creá el Paquete<a hidden class="anchor" aria-hidden="true" href="#creá-el-paquete">#</a></h3>
+<p>Ahora que hemos configurado las herramientas necesarias, vamos a crear el paquete. En tu sesión de R, ejecutá:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">create</span><span class="p">(</span><span class="s">&#34;dummyaddition&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Esto creará un nuevo paquete de R llamado <code>dummyaddition</code>, dentro del correspondiente directorio <code>dummyaddition</code>.</p>
+<p>⚠ <strong>Nota Importante</strong>: Aseguráte de que la sesión de R <strong>no está</strong> dentro del directorio <code>dummyaddition</code> cuando ejecutés <code>devtools::create</code>. De lo contrario tratará de crear un paquete anidado (es decir, un directorio <code>dummyaddition</code> dentro de otro directorio <code>dummyaddition</code>), lo cual puede ser problemático.</p>
+<p>Cuando ejecuta, la función muestra la siguiente información en tu consola de R:</p>
+<pre tabindex="0"><code>✔ Setting active project to &#34;/home/gp/Documents/dummyaddition&#34;.
+✔ Creating R/.
+✔ Writing DESCRIPTION.
+Package: dummyaddition
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R (parsed):
+    * First Last &lt;first.last@example.com&gt; [aut, cre]
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+✔ Writing NAMESPACE.
+✔ Setting active project to &#34;&lt;no active project&gt;&#34;.
+</code></pre><h4 id="qué-fue-creado">¿Qué Fue Creado?<a hidden class="anchor" aria-hidden="true" href="#qué-fue-creado">#</a></h4>
+<p>Notarás los siguientes elementos en tu directorio <code>dummyaddition</code>:</p>
+<ul>
+<li><strong>DESCRIPTION</strong>: Describe la metadata de tu paquete (por ejemplo, nombre, autor, versión y descripción). Editá este archivo siguiendo las instrucciones en él.</li>
+<li><strong>NAMESPACE</strong>: Maneja las funciones importadas y exportadas. Este archivo se genera automáticamente—evitá editarlo manualmente.</li>
+<li><strong>R/</strong>: Un directorio para que guardés las funciones y código de tu paquete. En este momento estará vacío.</li>
+</ul>
+<p>En este punto, ya tenemos el esqueleto del paquete. ¡Ahora escribamos el código!</p>
+<h3 id="escribiendo-el-código">Escribiendo el Código<a hidden class="anchor" aria-hidden="true" href="#escribiendo-el-código">#</a></h3>
+<p>Vamos a definir la función central de nuestro paquete. Creá un nuevo archivo llamado <code>addition.R</code> dentro del directorio <code>R/</code> y en él ingresá el siguiente código:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">addition</span> <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">if</span> <span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">1</span> <span class="o">||</span> <span class="nf">length</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">stop</span><span class="p">(</span><span class="s">&#34;I can&#39;t accept a vector. Sorry.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">if</span> <span class="p">(</span><span class="nf">is.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="kc">TRUE</span> <span class="o">&amp;&amp;</span> <span class="nf">is.numeric</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span><span class="kr">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">paste0</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nf">as.character</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Por supuesto, tu paquete puede incluir múltiples funciones de complejidad variable. Como recomendación general, poné cada función <strong>exportada</strong> en su propio archivo. Está bien incluir funciones auxiliares (internas) en el mismo archivo que las utiliza.</p>
+<h3 id="documentando-las-funciones">Documentando las Funciones<a hidden class="anchor" aria-hidden="true" href="#documentando-las-funciones">#</a></h3>
+<p>La documentación es un aspecto crucial del desarrollo de paquetes, y con <code>devtools</code> fácilmente la podés manejar utilizando <code>roxygen2</code>. Esto involucra la escritura de comentarios especiales en el encabezado de cada función para describe su propósito, uso y argumentos.</p>
+<p>Vamos a documentar nuestra función <code>addition</code> añadiendo el siguiente texto <strong>encima</strong> de su definición en el archivo <code>addition.R</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#&#39; Add two numeric values or paste two character values.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; This function takes two single values and adds them,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; if they are numeric, or pastes them together, otherwise.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; The function checks the length of each argument, and</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; returns an error if any of the arguments has length</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; greater than one.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; @usage addition(a, b)n</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; @keywords addition, pasting, sum.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; @param a A single value that is numeric, character or that</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39;  can be coerced to character.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; @param b A single value that is numeric, character or that</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39;  can be coerced to character.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; @return A numeric value with the sum of a and b, if both</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39;  are numeric, or a string if both values can be coerced to</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39;  to string.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; @examples</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; # Adding numerc values</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; addition(1, 6)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; # Pasting strings together</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; addition(&#34;nice &#34;, &#34;function&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39; @export</span>
+</span></span></code></pre></div><h4 id="puntos-clave-sobre-la-documentación">Puntos Clave Sobre la Documentación:<a hidden class="anchor" aria-hidden="true" href="#puntos-clave-sobre-la-documentación">#</a></h4>
+<ul>
+<li><code>#'</code> denota un comentario de documentación.</li>
+<li>La etiqueta <code>@export</code> es esencial para hacer disponible nuestra función a usuarios del paquete. Las funciones sin esta etiqueta son tratadas como internas.</li>
+<li>Etiquetas como <code>@param</code>, <code>@return</code>, <code>@keywords</code> y <code>@examples</code> ofrecen detalles estructurados a cerca de la función.</li>
+</ul>
+<h3 id="una-nota-sobre-la-importación-de-otros-paquetes">Una Nota Sobre la Importación de Otros Paquetes<a hidden class="anchor" aria-hidden="true" href="#una-nota-sobre-la-importación-de-otros-paquetes">#</a></h3>
+<p>Si tu paquete depende de librerías externas, deberás incluir la etiqueta <code>@import</code> en tu documentación, así:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1">#&#39; @import data.table</span>
+</span></span></code></pre></div><p>Esto asegura que el paquete importa correctamente la funcionalidad externa.</p>
+<p>Con la función principal implementada y documentada, estás en camino de construir un paquete funcional de R . ¡Gran trabajo hasta ahora! 🎉</p>
+<h3 id="construir-la-documentación">Construir la Documentación<a hidden class="anchor" aria-hidden="true" href="#construir-la-documentación">#</a></h3>
+<p>Para construir la documentación para tu paquete, aseguráte de que tu directorio de trabajo está establecido como el directorio raíz de tu paquete (<code>dummyaddition</code>). Si no has cerrado tu sesión de R, simplemente podés usar:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">setwd</span><span class="p">(</span><span class="s">&#34;dummyaddition&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Si ya habías cerrado la sesión, simplemente comenzá una nueva sesión de R en el directorio correcto y cargá de nuevo las librerías (<code>devtools</code> y <code>rmarkdown</code>) usando <code>library()</code>.</p>
+<p>Ahora, usá la función <code>devtools::document()</code>, un wrapper de la función <code>roxygen2::roxygenize()</code>, para generar la documentación. Ejecutá:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">document</span><span class="p">()</span>
+</span></span></code></pre></div><p>Esto produce el siguiente output:</p>
+<pre tabindex="0"><code>ℹ Updating dummyaddition documentation
+ℹ Loading dummyaddition
+Writing NAMESPACE
+Writing addition.Rd
+</code></pre><p>Veamos en detalle lo que ocurre cuando corrés este comando:</p>
+<ul>
+<li>El archivo <strong><code>NAMESPACE</code></strong> fue actualizado automáticamente: ahora incluye la información requerida para exportar la función <code>addition</code>.</li>
+<li>El directorio <strong><code>man</code></strong> fue creado, si no existía ya. Este directorio contiene archivos de documentación para sus funciones exportadas, escritos en formato <code>.Rd</code>. Por ejemplo:
+<ul>
+<li><code>addition.Rd</code>: Este archivo fue generado a partir de los comentarios especiales en el archivo <code>addition.R</code>. Contiene documentación en un formato reconocido por R. <strong>Nota</strong>: No modifiqués este archivo directamente, ya que es generado automáticamente.</li>
+</ul>
+</li>
+</ul>
+<p>En este punto, ya podés acceder a la ayuda de tu función, aún cuando el paquete no ha sido aún instalado. Para hacerlo, seguí este proceso específico:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="o">?</span> 
+</span></span><span class="line"><span class="cl"><span class="o">+</span> <span class="n">addition</span>
+</span></span></code></pre></div><p>En este código</p>
+<ul>
+<li><code>&gt;</code> representa el prompt de R.</li>
+<li><code>+</code> indica una línea de continuación (una característica de emacs).</li>
+</ul>
+<p>Esto quiere decir: escribí <code>?</code> y cuando emacs te ofrezca la siguiente línea, escribí <code>addition</code>.</p>
+<p>Cuando corrés este comando, vas a ver una página de ayuda para tu función cuidadosamente formateada, presentada como si tu paquete estuviera completamente instalado.</p>
+<pre tabindex="0"><code>ℹ Rendering development documentation for &#34;addition&#34;
+addition             package:dummyaddition             R Documentation
+
+Add two numeric values or paste two character values.
+
+Description:
+
+     This function takes two single values and adds them, if they are
+     numeric, or pastes them together, otherwise. The function checks
+     the length of each argument, and returns an error if any of the
+     arguments has length greater than one.
+
+Usage:
+
+     addition(a, b)
+     
+Arguments:
+
+       a: A single value that is numeric, character or that can be
+          coerced to character.
+
+       b: A single value that is numeric, character or that can be
+          coerced to character.
+
+Value:
+
+     A numeric value with the sum of a and b, if both are numeric, or a
+     string if both values can be coerced to to string.
+
+Examples:
+
+     # Adding numerc values
+     addition(1, 6)
+     # Pasting strings together
+     addition(&#34;nice &#34;, &#34;function&#34;)
+</code></pre><p>Esto confirma que tu documentación está funcionando correctamente y que tu paquete está bien estructurado.</p>
+<h4 id="un-pdf-bonito">Un PDF Bonito<a hidden class="anchor" aria-hidden="true" href="#un-pdf-bonito">#</a></h4>
+<p>Vamos a generar un PDF bien formateado para nuestro paquete—exactamente como los que has visto en los paquetes famosos de R.</p>
+<p>Para producir este PDF, vas a necesitar utilizar el terminal de emacs (shell) o eshell. Abrílo con <code>M-x shell</code> o con <code>M-x eshell</code> y navegá al directorio <strong>padre</strong> de tu proyecto (<code>Documents</code> en este ejemplo). Luego corré el siguiente comando en la terminal:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">R CMD Rd2pdf dummyaddition
+</span></span></code></pre></div><p>Esto generará un archivo PDF llamado <code>dummyaddition.pdf</code> en el directorio <code>Documentos</code>.</p>
+<p>⚠ <strong>Nota Importante</strong>: Podrías necesitar LaTeX y Pandoc instalados en tu sistema para poder crear el PDF. Si no están instalados, buscá en línea instrucciones específicas de instalación para tu plataforma (y preparáte un café, eso puede requerir tiempo y paciencia).</p>
+<h3 id="actualizá-el-archivo-readmemd">Actualizá el Archivo <code>README.md</code><a hidden class="anchor" aria-hidden="true" href="#actualizá-el-archivo-readmemd">#</a></h3>
+<p>El archivo <code>README.md</code> es la &ldquo;cara&rdquo; de tu paquete. Es lo que la gente ve primero cuando visitan tu repositorio (especialmente en GitHub), así que es importante actualizarlo con información relevante.</p>
+<p>Como mínimo, tu archivo <code>README.md</code> debe incluir:</p>
+<ul>
+<li><strong>Lo que tu paquete hace</strong>: Brinda una explicación clara y simple del problema que tu paquete resuelve.</li>
+<li><strong>Cómo instalarlo</strong>: Incluye instrucciones de instalación. Por ejemplo, podés añadir lo siguiente si tu paquete está alojado en GitHub:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;yourusername/dummyaddition&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Reemplazá <code>&quot;yourusername&quot;</code>con tu usuario de GitHub y <code>&quot;dummyaddition&quot;</code> con el nombre de tu paquete.</p>
+<h3 id="subiendo-tu-paquete-nuevo-a-github">Subiendo tu Paquete Nuevo a GitHub<a hidden class="anchor" aria-hidden="true" href="#subiendo-tu-paquete-nuevo-a-github">#</a></h3>
+<p>Una vez has completado tu código, documentación y actualizaciones al archivo <code>README.md</code>, es hora de subir (push) tus cambios a GitHub. Magit hace este proceso fácil y eficiente.</p>
+<ol>
+<li>
+<p><strong>Abrí el buffer de Magit</strong> de tu repositorio, típicamente llamado <code>magit: dummyaddition</code>. Si no está abierto, lo podés activar con el comando:</p>
+<pre tabindex="0"><code>M-x magit-status
+</code></pre></li>
+<li>
+<p><strong>Refrescá el status del repositorio</strong> presionando <code>g</code> en el buffer de Magit. Verás algo como esto:</p>
+<pre tabindex="0"><code>Head:     main Initial commit
+Merge:    origin/main Initial commit
+Push:     origin/main Initial commit
+
+Untracked files (4)
+Unstaged changes (1)
+
+Recent commits
+</code></pre><p>Podés expandir secciones específicas (por ejemplo untracked files, unstaged changes, recent commits) presionando <code>TAB</code>.</p>
+</li>
+</ol>
+<h4 id="staging-y-committing-cambios">Staging y Committing Cambios<a hidden class="anchor" aria-hidden="true" href="#staging-y-committing-cambios">#</a></h4>
+<ul>
+<li>
+<p><strong>Untracked files</strong>: Cuando expandís la sección &ldquo;Untracked files&rdquo;, verás archivos como <code>DESCRIPTION</code>, <code>NAMESPACE</code>, y directorios como <code>man/</code> y <code>R/</code>. Estos son los nuevos archivos y directorios que hemos creado durante el proceso de desarrollo.</p>
+<ul>
+<li>Stage estos cambios seleccionando el archivo o directorio y presionando <code>s</code> (de <em>stage</em>). Los archivos staged ahora aparecerán en la sección &ldquo;Staged changes&rdquo;.</li>
+</ul>
+</li>
+<li>
+<p><strong>Unstaged changes</strong>: Vas a notar que el archivo <code>README.md</code> aparece aquí porque fue modificado (no creado nuevo). Stage estos cambios con <code>s</code> nuevamente. Magit podría preguntarte si querés stage todos los cambios —presioná <strong>y</strong> para confirmar.</p>
+</li>
+<li>
+<p>Una vez todos los cambios están staged en la sección &ldquo;Staged changes&rdquo;, hacé el commit de ellos presionando <code>c</code> (de <em>commit</em>). Un menú aparecerá. Presioná <code>c</code> nuevamente para crear el commit.</p>
+</li>
+</ul>
+<h4 id="escribiendo-el-mensaje-de-commit">Escribiendo el Mensaje de Commit<a hidden class="anchor" aria-hidden="true" href="#escribiendo-el-mensaje-de-commit">#</a></h4>
+<p>Una vez comencés el proceso de commit, un buffer se abrirá para que escribás el mensaje de commit. Los mensajes de commit debe ser concisos y explicativos. Por ejemplo:</p>
+<ul>
+<li><strong>Título</strong>: Resumí el commit claramente en una línea.</li>
+<li><strong>Cuerpo (opcional)</strong>: Adicioná más detalles si es necesario, especialmente si los cambios son complejos.</li>
+</ul>
+<p>Aquí está un ejemplo de mensaje de commit para nuestro trabajo:</p>
+<pre tabindex="0"><code>Código y Documentación Generada
+- Creada la función central `addition`.
+- Creada por auto-generación la documentación con roxygen2.
+- Actualizado el archivo README.md.
+</code></pre><p>Después de escribir tu mensaje de commit, guardálo presionando <code>C-c C-c</code> para confirmar y cerrar el buffer.</p>
+<p>Esto actualizará el buffer de magit, que ahora podrá decir algo como:</p>
+<pre tabindex="0"><code>Unmerged into origin/main (1)
+56d6bd3 main Código y Documentación Generada
+</code></pre><p>Esto significa que tus cambios han sido commited localmente pero aún no hemos subido (pushed) al repositorio de GitHub.</p>
+<h4 id="subiendo-pushing-a-github">Subiendo (Pushing) a GitHub<a hidden class="anchor" aria-hidden="true" href="#subiendo-pushing-a-github">#</a></h4>
+<p>Para pushar tus cambios a GitHub, presioná <code>P</code> (de <em>push</em>) en el buffer de Magit. Un menú aparecerá, presioná <code>p</code> para subir tus cambios a <code>origin/main</code>.</p>
+<p>Magit podría preguntarte por tus credenciales de GitHub (usuario y password), si no las has configurado para SSH o autenticación con token. Ingresá la información requerida, y después de un momento, el buffer de Magit reflejará que los cambios han sido pushed:</p>
+<pre tabindex="0"><code>Recent commits
+56d6bd3 origin/main Código y Documentación Generada
+4b1b6c8 Initial commit
+</code></pre><p>En este punto tus cambios están activos en GitHub. Podés verificarlos visitando tu repositorio en  GitHub.</p>
+<h2 id="compartí-tu-paquete">Compartí tu Paquete<a hidden class="anchor" aria-hidden="true" href="#compartí-tu-paquete">#</a></h2>
+<p>¡Tu camino no está completo hasta que no compartás tu trabajo! A pesar de que este paquete resuelva un problema particular para vos, es bien probable que alguno de los 8 mil millones de humanos que poblamos este planeta 🌍 pueda enfrentar el mismo reto en el futuro. Compartir tu trabajo puede ayudarlos a ellos también.</p>
+<p>Aquí hay algunas formas de compartir tu paquete:</p>
+<ul>
+<li>Publicá sobre él en tus <strong>redes sociales</strong>.</li>
+<li>Escribí un <strong>blog</strong> sobre lo que hace.</li>
+<li>Compartílo en plataformas como <a href="https://news.ycombinator.com">Hacker News</a> o <a href="https://lobste.rs">Lobste.rs</a>.</li>
+<li>Mencionálo en <strong>foros o comunidades</strong> relevantes.</li>
+</ul>
+<p>Cualquier método que escojás, ¡no te olvidés de compartir tu excelente trabajo con el mundo!</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://example.org/es/tags/r/">R</a></li>
+      <li><a href="https://example.org/es/tags/emacs/">Emacs</a></li>
+      <li><a href="https://example.org/es/tags/ess/">ESS</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://example.org/es/posts/spanish2/">
+    <span class="title">Siguiente »</span>
+    <br>
+    <span>Paquete spanish2 para R</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Escribiendo un Paquete para R con Emacs on x"
+            href="https://x.com/intent/tweet/?text=Escribiendo%20un%20Paquete%20para%20R%20con%20Emacs&amp;url=https%3a%2f%2fexample.org%2fes%2fposts%2fwriting-r-package-emacs%2f&amp;hashtags=R%2cemacs%2cESS">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Escribiendo un Paquete para R con Emacs on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fexample.org%2fes%2fposts%2fwriting-r-package-emacs%2f&amp;title=Escribiendo%20un%20Paquete%20para%20R%20con%20Emacs&amp;summary=Escribiendo%20un%20Paquete%20para%20R%20con%20Emacs&amp;source=https%3a%2f%2fexample.org%2fes%2fposts%2fwriting-r-package-emacs%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Escribiendo un Paquete para R con Emacs on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fexample.org%2fes%2fposts%2fwriting-r-package-emacs%2f&title=Escribiendo%20un%20Paquete%20para%20R%20con%20Emacs">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Escribiendo un Paquete para R con Emacs on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fexample.org%2fes%2fposts%2fwriting-r-package-emacs%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Escribiendo un Paquete para R con Emacs on whatsapp"
+            href="https://api.whatsapp.com/send?text=Escribiendo%20un%20Paquete%20para%20R%20con%20Emacs%20-%20https%3a%2f%2fexample.org%2fes%2fposts%2fwriting-r-package-emacs%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Escribiendo un Paquete para R con Emacs on telegram"
+            href="https://telegram.me/share/url?text=Escribiendo%20un%20Paquete%20para%20R%20con%20Emacs&amp;url=https%3a%2f%2fexample.org%2fes%2fposts%2fwriting-r-package-emacs%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Escribiendo un Paquete para R con Emacs on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Escribiendo%20un%20Paquete%20para%20R%20con%20Emacs&u=https%3a%2f%2fexample.org%2fes%2fposts%2fwriting-r-package-emacs%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://github.com/pavodive">pavodive</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copiar';
+
+        function copyingDone() {
+            copybutton.innerHTML = '¡copiado!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copiar';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

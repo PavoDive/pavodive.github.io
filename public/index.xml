@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Reminders for Future Me</title>
+    <link>https://example.org/</link>
+    <description>Recent content on Reminders for Future Me</description>
+    <image>
+      <title>Reminders for Future Me</title>
+      <url>https://example.org/images/papermod-cover.png</url>
+      <link>https://example.org/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- 0.140.2</generator>
+    <language>en</language>
+    <copyright>pavodive</copyright>
+    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Paquete spanish2 para R</title>
+      <link>https://example.org/posts/spanish2/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/spanish2/</guid>
+      <description>Paquete para convertir números a su equivalente en texto en Español con R</description>
+    </item>
+    <item>
+      <title>Writing an R package with Emacs and ESS</title>
+      <link>https://example.org/posts/writing-r-package-emacs/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://example.org/posts/writing-r-package-emacs/</guid>
+      <description>Step by step guide to write R packages with emacs</description>
+    </item>
+  </channel>
+</rss>
