@@ -49,7 +49,7 @@ languages:
       series: series
     menu:
       main:
-        - name: Arhivo
+        - name: Archivo
           url: archives/
           weight: 5
         - name: Buscar
