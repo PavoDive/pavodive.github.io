@@ -2,197 +2,275 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/categories/</loc>
+    <loc>https://pavodive.github.io/posts/merge_pandas_operations/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/posts/merge_pandas_operations/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/posts/merge_pandas_operations/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/posts/basic_pandas_operations/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/posts/basic_pandas_operations/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/posts/basic_pandas_operations/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/posts/time_pandas_operations/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/posts/time_pandas_operations/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/posts/time_pandas_operations/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/categories/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/categories/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/series/how-to/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/series/how-to/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/series/how-to/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/tags/pandas/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/tags/pandas/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/tags/pandas/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/posts/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/posts/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/tags/python/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/tags/python/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/tags/python/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/categories/python/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/categories/python/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/categories/python/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/series/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/series/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/tags/</loc>
+    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/tags/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/tags/emacs/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://example.org/es/categories/"
+                href="https://pavodive.github.io/es/tags/emacs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/categories/"
+                href="https://pavodive.github.io/tags/emacs/"
                 />
   </url><url>
-    <loc>https://example.org/tags/emacs/</loc>
+    <loc>https://pavodive.github.io/categories/emacs/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://example.org/es/tags/emacs/"
+                href="https://pavodive.github.io/es/categories/emacs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/tags/emacs/"
+                href="https://pavodive.github.io/categories/emacs/"
                 />
   </url><url>
-    <loc>https://example.org/categories/emacs/</loc>
+    <loc>https://pavodive.github.io/tags/ess/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://example.org/es/categories/emacs/"
+                href="https://pavodive.github.io/es/tags/ess/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/categories/emacs/"
+                href="https://pavodive.github.io/tags/ess/"
                 />
   </url><url>
-    <loc>https://example.org/tags/ess/</loc>
+    <loc>https://pavodive.github.io/posts/spanish2/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://example.org/es/tags/ess/"
+                href="https://pavodive.github.io/es/posts/spanish2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/tags/ess/"
+                href="https://pavodive.github.io/posts/spanish2/"
                 />
   </url><url>
-    <loc>https://example.org/series/how-to/</loc>
+    <loc>https://pavodive.github.io/tags/r/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://example.org/es/series/how-to/"
+                href="https://pavodive.github.io/es/tags/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/series/how-to/"
+                href="https://pavodive.github.io/tags/r/"
                 />
   </url><url>
-    <loc>https://example.org/posts/spanish2/</loc>
+    <loc>https://pavodive.github.io/categories/r/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://example.org/es/posts/spanish2/"
+                href="https://pavodive.github.io/es/categories/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/posts/spanish2/"
+                href="https://pavodive.github.io/categories/r/"
                 />
   </url><url>
-    <loc>https://example.org/posts/</loc>
+    <loc>https://pavodive.github.io/posts/writing-r-package-emacs/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://example.org/es/posts/"
+                href="https://pavodive.github.io/es/posts/writing-r-package-emacs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/posts/"
+                href="https://pavodive.github.io/posts/writing-r-package-emacs/"
                 />
   </url><url>
-    <loc>https://example.org/tags/r/</loc>
-    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+    <loc>https://pavodive.github.io/archives/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://example.org/es/tags/r/"
+                href="https://pavodive.github.io/es/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/tags/r/"
+                href="https://pavodive.github.io/archives/"
                 />
   </url><url>
-    <loc>https://example.org/categories/r/</loc>
-    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+    <loc>https://pavodive.github.io/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://example.org/es/categories/r/"
+                href="https://pavodive.github.io/es/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/categories/r/"
-                />
-  </url><url>
-    <loc>https://example.org/</loc>
-    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://example.org/es/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://example.org/"
-                />
-  </url><url>
-    <loc>https://example.org/series/</loc>
-    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://example.org/es/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://example.org/series/"
-                />
-  </url><url>
-    <loc>https://example.org/tags/</loc>
-    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://example.org/es/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://example.org/tags/"
-                />
-  </url><url>
-    <loc>https://example.org/posts/writing-r-package-emacs/</loc>
-    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://example.org/es/posts/writing-r-package-emacs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://example.org/posts/writing-r-package-emacs/"
-                />
-  </url><url>
-    <loc>https://example.org/archives/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://example.org/es/archives/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://example.org/archives/"
-                />
-  </url><url>
-    <loc>https://example.org/search/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://example.org/es/search/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://example.org/search/"
+                href="https://pavodive.github.io/search/"
                 />
   </url>
 </urlset>

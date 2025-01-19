@@ -3,7 +3,8 @@ languageCode: en-us
 title: Reminders for Future Me
 theme: ["PaperMod"]
 copyright: "© [pavodive](https://github.com/pavodive)"
-paginate: 5
+# paginate: 5
+pagination.pagerSize: 5
 theme: [PaperMod]
 
 enableInlineShortcodes: true
@@ -38,6 +39,13 @@ languages:
         - name: Tags
           url: tags/
           weight: 10
+    # homeInfoParams:
+    #   Title: "I make computers do interesting things for me, but I always forget how I did it"
+    #   Content: >
+
+    #     - I'm a mechanical engineer, passionate about optimization, science, and technology. I have a deep appreciation for free software (free as in freedom!), and this blog is both an attempt to give back a little of what I've received over the years and a space to keep reminders of how I've made computers solve problems for me.
+
+    #     - I often find myself revisiting answers on Stack Overflow—answers I've already upvoted. I sometimes wonder how many times I've wished I could upvote the same solutions again. With this blog, I aim to create a personal space to write (and consult!) my own answers, whether they're original or partially borrowed from Stack Overflow 🙈. My hope is that some of these posts will also be helpful to others.
 
   es:
     languageName: ":es:"
@@ -58,6 +66,13 @@ languages:
         - name: Etiquetas
           url: tags/
           weight: 10
+    # homeInfoParams:
+    #   Title: "Yo hago que los computadores hagan cosas interesantes para mí, pero siempre me olvido de cómo lo hice."
+    #   Content: >
+
+    #     - Soy un ingeniero mecánico, apasionado por la optimización, la ciencia y la tecnología. Siento una profunda admiración y agradecimiento por el software libre, y este blog es a la vez un intento por devolver un poco de lo que he recibido a lo largo de los años, y un espacio para mantener recordatorios de cómo he hecho para que los computadores resuelvan problemas por mí.
+
+    #     - Frecuentemente me encuentro visitando de nuevo respuestas en Stack Overflow—respuestas que yo mismo he votado. Algunas veces me pregunto cuántas veces he deseado volver a votar las mismas soluciones de nuevo. Con este blog, tengo como objetivo crear un espacio personal para escribir (¡y consultar!) mis propias respuestas, ya sea que sean originales o parcialmente prestadas de Stack Overflow 🙈. Mi expectativa es que algunas de estas publicaciones sean útiles también para otros.
 
     # custom params for each language should be under [langcode].parms - hugo v0.120.0
     # params:
