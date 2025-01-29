@@ -2,51 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Recordatorios Para Mi Yo Futuro</title>
-    <link>https://pavodive.github.io/es/</link>
+    <link>http://localhost:1313/es/</link>
     <description>Recent content on Recordatorios Para Mi Yo Futuro</description>
     <image>
       <title>Recordatorios Para Mi Yo Futuro</title>
-      <url>https://pavodive.github.io/images/papermod-cover.png</url>
-      <link>https://pavodive.github.io/images/papermod-cover.png</link>
+      <url>http://localhost:1313/images/papermod-cover.png</url>
+      <link>http://localhost:1313/images/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.141.0</generator>
+    <generator>Hugo -- 0.142.0</generator>
     <language>es</language>
     <copyright>pavodive</copyright>
-    <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://pavodive.github.io/es/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RSS con elfeed en emacs</title>
+      <link>http://localhost:1313/es/posts/emacs_rss_elfeed/</link>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/posts/emacs_rss_elfeed/</guid>
+      <description>Así configuré elfeed para tener un compendio de los blogs y sitios que me gustan</description>
+    </item>
     <item>
       <title>Operaciones Básicas con Fechas en Pandas</title>
-      <link>https://pavodive.github.io/es/posts/time_pandas_operations/</link>
+      <link>http://localhost:1313/es/posts/time_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/es/posts/time_pandas_operations/</guid>
+      <guid>http://localhost:1313/es/posts/time_pandas_operations/</guid>
       <description>Conversión de fechas con pandas, filtrado con fechas con pandas</description>
     </item>
     <item>
       <title>Operaciones Básicas con Pandas</title>
-      <link>https://pavodive.github.io/es/posts/basic_pandas_operations/</link>
+      <link>http://localhost:1313/es/posts/basic_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/es/posts/basic_pandas_operations/</guid>
+      <guid>http://localhost:1313/es/posts/basic_pandas_operations/</guid>
       <description>Remover columnas con pandas, reordenar columnas con pandas y cambiar el nombre de columnas con pandas</description>
     </item>
     <item>
       <title>Operaciones Básicas de Cruce de Tablas con Pandas</title>
-      <link>https://pavodive.github.io/es/posts/merge_pandas_operations/</link>
+      <link>http://localhost:1313/es/posts/merge_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/es/posts/merge_pandas_operations/</guid>
+      <guid>http://localhost:1313/es/posts/merge_pandas_operations/</guid>
       <description>Merge con pandas, join con pandas, cruce de tablas con pandas</description>
     </item>
     <item>
       <title>Escribiendo un Paquete para R con Emacs</title>
-      <link>https://pavodive.github.io/es/posts/writing-r-package-emacs/</link>
+      <link>http://localhost:1313/es/posts/writing-r-package-emacs/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/es/posts/writing-r-package-emacs/</guid>
+      <guid>http://localhost:1313/es/posts/writing-r-package-emacs/</guid>
       <description>Guía paso a paso para escribir paquetes de R con emacs</description>
     </item>
     <item>
       <title>Paquete spanish2 para R</title>
-      <link>https://pavodive.github.io/es/posts/spanish2/</link>
+      <link>http://localhost:1313/es/posts/spanish2/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/es/posts/spanish2/</guid>
+      <guid>http://localhost:1313/es/posts/spanish2/</guid>
       <description>Paquete para convertir números a su equivalente en texto en Español con R</description>
     </item>
   </channel>

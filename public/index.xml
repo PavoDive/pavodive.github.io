@@ -2,51 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Reminders for Future Me</title>
-    <link>https://pavodive.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Reminders for Future Me</description>
     <image>
       <title>Reminders for Future Me</title>
-      <url>https://pavodive.github.io/images/papermod-cover.png</url>
-      <link>https://pavodive.github.io/images/papermod-cover.png</link>
+      <url>http://localhost:1313/images/papermod-cover.png</url>
+      <link>http://localhost:1313/images/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.141.0</generator>
+    <generator>Hugo -- 0.142.0</generator>
     <language>en</language>
     <copyright>pavodive</copyright>
-    <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://pavodive.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RSS with elfeed in emacs</title>
+      <link>http://localhost:1313/posts/emacs_rss_elfeed/</link>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/emacs_rss_elfeed/</guid>
+      <description>This is how I configured elfeed to have all the blogs I like together</description>
+    </item>
     <item>
       <title>Basic Merge Pandas Operations</title>
-      <link>https://pavodive.github.io/posts/merge_pandas_operations/</link>
+      <link>http://localhost:1313/posts/merge_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/posts/merge_pandas_operations/</guid>
+      <guid>http://localhost:1313/posts/merge_pandas_operations/</guid>
       <description>Pandas merge, pandas join</description>
     </item>
     <item>
       <title>Basic Pandas Operations</title>
-      <link>https://pavodive.github.io/posts/basic_pandas_operations/</link>
+      <link>http://localhost:1313/posts/basic_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/posts/basic_pandas_operations/</guid>
+      <guid>http://localhost:1313/posts/basic_pandas_operations/</guid>
       <description>Pandas drop columns, reorder columns, change name of columns</description>
     </item>
     <item>
       <title>Basic Time Pandas Operations</title>
-      <link>https://pavodive.github.io/posts/time_pandas_operations/</link>
+      <link>http://localhost:1313/posts/time_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/posts/time_pandas_operations/</guid>
+      <guid>http://localhost:1313/posts/time_pandas_operations/</guid>
       <description>pandas date conversion filtering, pandas date filtering</description>
     </item>
     <item>
       <title>Paquete spanish2 para R</title>
-      <link>https://pavodive.github.io/posts/spanish2/</link>
+      <link>http://localhost:1313/posts/spanish2/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/posts/spanish2/</guid>
+      <guid>http://localhost:1313/posts/spanish2/</guid>
       <description>Paquete para convertir números a su equivalente en texto en Español con R</description>
     </item>
     <item>
       <title>Writing an R package with Emacs and ESS</title>
-      <link>https://pavodive.github.io/posts/writing-r-package-emacs/</link>
+      <link>http://localhost:1313/posts/writing-r-package-emacs/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/posts/writing-r-package-emacs/</guid>
+      <guid>http://localhost:1313/posts/writing-r-package-emacs/</guid>
       <description>Step by step guide to write R packages with emacs</description>
     </item>
   </channel>

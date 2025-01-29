@@ -2,275 +2,275 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pavodive.github.io/posts/merge_pandas_operations/</loc>
+    <loc>http://localhost:1313/posts/merge_pandas_operations/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/posts/merge_pandas_operations/"
+                href="http://localhost:1313/es/posts/merge_pandas_operations/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/posts/merge_pandas_operations/"
+                href="http://localhost:1313/posts/merge_pandas_operations/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/posts/basic_pandas_operations/</loc>
+    <loc>http://localhost:1313/posts/basic_pandas_operations/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/posts/basic_pandas_operations/"
+                href="http://localhost:1313/es/posts/basic_pandas_operations/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/posts/basic_pandas_operations/"
+                href="http://localhost:1313/posts/basic_pandas_operations/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/posts/time_pandas_operations/</loc>
+    <loc>http://localhost:1313/posts/time_pandas_operations/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/posts/time_pandas_operations/"
+                href="http://localhost:1313/es/posts/time_pandas_operations/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/posts/time_pandas_operations/"
+                href="http://localhost:1313/posts/time_pandas_operations/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/categories/"
+                href="http://localhost:1313/es/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/categories/"
+                href="http://localhost:1313/categories/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/series/how-to/</loc>
+    <loc>http://localhost:1313/series/how-to/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/series/how-to/"
+                href="http://localhost:1313/es/series/how-to/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/series/how-to/"
+                href="http://localhost:1313/series/how-to/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/tags/pandas/</loc>
+    <loc>http://localhost:1313/tags/pandas/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/tags/pandas/"
+                href="http://localhost:1313/es/tags/pandas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/tags/pandas/"
+                href="http://localhost:1313/tags/pandas/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/posts/"
+                href="http://localhost:1313/es/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/posts/"
+                href="http://localhost:1313/posts/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/tags/python/</loc>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/tags/python/"
+                href="http://localhost:1313/es/tags/python/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/tags/python/"
+                href="http://localhost:1313/tags/python/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/categories/python/</loc>
+    <loc>http://localhost:1313/categories/python/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/categories/python/"
+                href="http://localhost:1313/es/categories/python/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/categories/python/"
+                href="http://localhost:1313/categories/python/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/"
+                href="http://localhost:1313/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/"
+                href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/series/</loc>
+    <loc>http://localhost:1313/series/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/series/"
+                href="http://localhost:1313/es/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/series/"
+                href="http://localhost:1313/series/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-01-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/tags/"
+                href="http://localhost:1313/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/tags/"
+                href="http://localhost:1313/tags/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/tags/emacs/</loc>
+    <loc>http://localhost:1313/tags/emacs/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/tags/emacs/"
+                href="http://localhost:1313/es/tags/emacs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/tags/emacs/"
+                href="http://localhost:1313/tags/emacs/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/categories/emacs/</loc>
+    <loc>http://localhost:1313/categories/emacs/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/categories/emacs/"
+                href="http://localhost:1313/es/categories/emacs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/categories/emacs/"
+                href="http://localhost:1313/categories/emacs/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/tags/ess/</loc>
+    <loc>http://localhost:1313/tags/ess/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/tags/ess/"
+                href="http://localhost:1313/es/tags/ess/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/tags/ess/"
+                href="http://localhost:1313/tags/ess/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/posts/spanish2/</loc>
+    <loc>http://localhost:1313/posts/spanish2/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/posts/spanish2/"
+                href="http://localhost:1313/es/posts/spanish2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/posts/spanish2/"
+                href="http://localhost:1313/posts/spanish2/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/tags/r/</loc>
+    <loc>http://localhost:1313/tags/r/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/tags/r/"
+                href="http://localhost:1313/es/tags/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/tags/r/"
+                href="http://localhost:1313/tags/r/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/categories/r/</loc>
+    <loc>http://localhost:1313/categories/r/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/categories/r/"
+                href="http://localhost:1313/es/categories/r/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/categories/r/"
+                href="http://localhost:1313/categories/r/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/posts/writing-r-package-emacs/</loc>
+    <loc>http://localhost:1313/posts/writing-r-package-emacs/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/posts/writing-r-package-emacs/"
+                href="http://localhost:1313/es/posts/writing-r-package-emacs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/posts/writing-r-package-emacs/"
+                href="http://localhost:1313/posts/writing-r-package-emacs/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/archives/</loc>
+    <loc>http://localhost:1313/archives/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/archives/"
+                href="http://localhost:1313/es/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/archives/"
+                href="http://localhost:1313/archives/"
                 />
   </url><url>
-    <loc>https://pavodive.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://pavodive.github.io/es/search/"
+                href="http://localhost:1313/es/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pavodive.github.io/search/"
+                href="http://localhost:1313/search/"
                 />
   </url>
 </urlset>
