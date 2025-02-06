@@ -9,11 +9,25 @@
       <url>http://localhost:1313/images/papermod-cover.png</url>
       <link>http://localhost:1313/images/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.142.0</generator>
+    <generator>Hugo -- 0.143.1</generator>
     <language>en</language>
     <copyright>pavodive</copyright>
-    <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating RMarkdown Rendering and PDF Merging with Bash</title>
+      <link>http://localhost:1313/posts/bash_scripts_rmarkdown/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bash_scripts_rmarkdown/</guid>
+      <description>I used bash to automate the rendering of hundreds of Rmarkdown files and the merging of the resulting PDFs</description>
+    </item>
+    <item>
+      <title>RSS with elfeed in emacs</title>
+      <link>http://localhost:1313/posts/emacs_rss_elfeed/</link>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/emacs_rss_elfeed/</guid>
+      <description>This is how I configured elfeed to have all the blogs I like together</description>
+    </item>
     <item>
       <title>Basic Merge Pandas Operations</title>
       <link>http://localhost:1313/posts/merge_pandas_operations/</link>

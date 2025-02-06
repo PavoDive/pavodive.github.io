@@ -69,6 +69,7 @@
     <meta property="article:tag" content="Python">
     <meta property="article:tag" content="Pandas">
       <meta property="og:image" content="http://localhost:1313/images/papermod-cover.png">
+      <meta property="og:see_also" content="http://localhost:1313/posts/bash_scripts_rmarkdown/">
       <meta property="og:see_also" content="http://localhost:1313/posts/emacs_rss_elfeed/">
       <meta property="og:see_also" content="http://localhost:1313/posts/basic_pandas_operations/">
       <meta property="og:see_also" content="http://localhost:1313/posts/time_pandas_operations/">
@@ -297,8 +298,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 2  2020-NAN-01         7    NaN    NaN                  NaN          NaN</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 3  2006-EBO-01        24  black   40.0  2006-11-29 11:21:00  2006-EBO-01</span>
 </span></span></code></pre></div><blockquote>
-<p>Tip: For both left and right joins, you may want to drop one of the duplicated key columns (<code>sku_sales</code> or <code>sku</code>). If you can’t remember how to drop a column (like me!), check <a href="http://localhost:1313/posts/basic_pandas_operations/" title="Basic Pandas Operations">this post</a>.</p>
-</blockquote>
+<p>Tip: For both left and right joins, you may want to drop one of the duplicated key columns (<code>sku_sales</code> or <code>sku</code>). If you can’t remember how to drop a column (like me!), check <a href="http://localhost:1313/posts/basic_pandas_operations/" title="Basic Pandas Operations">this post</a>.</p></blockquote>
 <h3 id="right-join-all-items-in-items_df">Right Join: All Items in <code>items_df</code><a hidden class="anchor" aria-hidden="true" href="#right-join-all-items-in-items_df">#</a></h3>
 <p>A right join includes all rows from the <code>items_df</code> dataframe. In this case, you’ll lose information about <code>sales</code> rows that don’t match. For example, the <code>2020-NAN-01</code> item is not included in the result because it doesn’t exist in <code>items_df</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">merged_right</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span>

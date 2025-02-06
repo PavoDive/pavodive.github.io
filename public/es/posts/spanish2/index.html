@@ -68,6 +68,7 @@
     <meta property="article:modified_time" content="2025-01-11T00:00:00+00:00">
     <meta property="article:tag" content="R">
       <meta property="og:image" content="http://localhost:1313/images/papermod-cover.png">
+      <meta property="og:see_also" content="http://localhost:1313/es/posts/bash_scripts_rmarkdown/">
       <meta property="og:see_also" content="http://localhost:1313/es/posts/emacs_rss_elfeed/">
       <meta property="og:see_also" content="http://localhost:1313/es/posts/time_pandas_operations/">
       <meta property="og:see_also" content="http://localhost:1313/es/posts/basic_pandas_operations/">
@@ -258,12 +259,10 @@
 <h2 id="por-qué-escribir-el-valor-en-letras">¿Por qué escribir el valor en letras?<a hidden class="anchor" aria-hidden="true" href="#por-qué-escribir-el-valor-en-letras">#</a></h2>
 <p>No sé si es solamente una costumbre en mi país🇨🇴, pero en textos legales aquí se acostumbra escribir el valor en letras inmediatamente después de una cantidad. Por ejemplo:</p>
 <blockquote>
-<p>&hellip;con un precio de $1.000.000 (un millón de pesos)&hellip;</p>
-</blockquote>
+<p>&hellip;con un precio de $1.000.000 (un millón de pesos)&hellip;</p></blockquote>
 <p>o</p>
 <blockquote>
-<p>&hellip;el lote tiene un área de 43 ha (cuarenta y tres hectáreas)&hellip;</p>
-</blockquote>
+<p>&hellip;el lote tiene un área de 43 ha (cuarenta y tres hectáreas)&hellip;</p></blockquote>
 <p>Debido a unas colaboraciones que hago, me he enfrentado a esa situación muchas veces durante los últimos meses.</p>
 <h2 id="qué-alternativas-tenía">¿Qué alternativas tenía?<a hidden class="anchor" aria-hidden="true" href="#qué-alternativas-tenía">#</a></h2>
 <p>Hay un paquete en <a href="https://cran.r-project.org/web/packages/spanish/index.html">CRAN</a> y en <a href="https://github.com/rOpenSpain/spanish">github</a> llamado <code>spanish</code> que cumple casi con la funcionalidad que necesitaba. El paquete tiene una función, <code>spanish::to_words()</code> que convierte los números en texto. Pero esta función tenía algunas limitaciones:</p>

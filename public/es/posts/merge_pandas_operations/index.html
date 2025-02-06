@@ -69,6 +69,7 @@
     <meta property="article:tag" content="Python">
     <meta property="article:tag" content="Pandas">
       <meta property="og:image" content="http://localhost:1313/images/papermod-cover.png">
+      <meta property="og:see_also" content="http://localhost:1313/es/posts/bash_scripts_rmarkdown/">
       <meta property="og:see_also" content="http://localhost:1313/es/posts/emacs_rss_elfeed/">
       <meta property="og:see_also" content="http://localhost:1313/es/posts/time_pandas_operations/">
       <meta property="og:see_also" content="http://localhost:1313/es/posts/basic_pandas_operations/">
@@ -297,8 +298,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 2  2020-NAN-01         7    NaN    NaN                  NaN          NaN</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 3  2006-EBO-01        24  black   40.0  2006-11-29 11:21:00  2006-EBO-01</span>
 </span></span></code></pre></div><blockquote>
-<p>Tip: Para las uniones izquierda y derecha, es posible que querás descartar una de las columnas clave duplicadas (<code>sku_sales</code> o <code>sku</code>). Si no podés recordar cómo descartar una columna (¡como yo!), chequeá <a href="http://localhost:1313/es/posts/basic_pandas_operations/" title="Operaciones Básicas con Pandas">este artículo</a>.</p>
-</blockquote>
+<p>Tip: Para las uniones izquierda y derecha, es posible que querás descartar una de las columnas clave duplicadas (<code>sku_sales</code> o <code>sku</code>). Si no podés recordar cómo descartar una columna (¡como yo!), chequeá <a href="http://localhost:1313/es/posts/basic_pandas_operations/" title="Operaciones Básicas con Pandas">este artículo</a>.</p></blockquote>
 <h3 id="unión-derecha-todos-los-ítems-en-items_df">Unión Derecha: Todos los Ítems en <code>items_df</code><a hidden class="anchor" aria-hidden="true" href="#unión-derecha-todos-los-ítems-en-items_df">#</a></h3>
 <p>Una unión derecha incluye todas las filas de <code>items_df</code>. En este caso, vas a perder información sobre las filas de ventas (<code>sales</code>) que no concuerdan. Por ejemplo, el ítem <code>2020-NAN-01</code> no está incluido en el resultado, porque no existe en <code>items_df</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">merged_right</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sales</span><span class="p">,</span>
