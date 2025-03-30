@@ -2,23 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Shell on Recordatorios Para Mi Yo Futuro</title>
-    <link>http://localhost:1313/es/tags/shell/</link>
+    <link>https://pavodive.github.io/es/tags/shell/</link>
     <description>Recent content in Shell on Recordatorios Para Mi Yo Futuro</description>
     <image>
       <title>Recordatorios Para Mi Yo Futuro</title>
-      <url>http://localhost:1313/images/papermod-cover.png</url>
-      <link>http://localhost:1313/images/papermod-cover.png</link>
+      <url>https://pavodive.github.io/images/papermod-cover.png</url>
+      <link>https://pavodive.github.io/images/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.144.1</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>es</language>
     <copyright>pavodive</copyright>
-    <lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/es/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://pavodive.github.io/es/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Un Script en Bash Para Editar y Exportar Desde una Plantilla en Org-mode</title>
+      <link>https://pavodive.github.io/es/posts/bash_orgmode_certificate/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/es/posts/bash_orgmode_certificate/</guid>
+      <description>Yo tengo la plantilla de un documento en org-mode. Yo debo editar una información en ese archivo, y exportarla a texto y luego a PDF. Yo lo logro con un script de bash.</description>
+    </item>
     <item>
       <title>Automatizando el Renderizado de Rmarkdown y Uniendo PDFs con Bash</title>
-      <link>http://localhost:1313/es/posts/bash_scripts_rmarkdown/</link>
+      <link>https://pavodive.github.io/es/posts/bash_scripts_rmarkdown/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/posts/bash_scripts_rmarkdown/</guid>
+      <guid>https://pavodive.github.io/es/posts/bash_scripts_rmarkdown/</guid>
       <description>Usé bash para automatizar el renderizado de cientos de archivos Rmarkdown y para unir los PDFs resultantes</description>
     </item>
   </channel>

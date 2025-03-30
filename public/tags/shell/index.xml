@@ -2,23 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Shell on Reminders for Future Me</title>
-    <link>http://localhost:1313/tags/shell/</link>
+    <link>https://pavodive.github.io/tags/shell/</link>
     <description>Recent content in Shell on Reminders for Future Me</description>
     <image>
       <title>Reminders for Future Me</title>
-      <url>http://localhost:1313/images/papermod-cover.png</url>
-      <link>http://localhost:1313/images/papermod-cover.png</link>
+      <url>https://pavodive.github.io/images/papermod-cover.png</url>
+      <link>https://pavodive.github.io/images/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.144.1</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <copyright>pavodive</copyright>
-    <lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://pavodive.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bash Script for Edition and Exporting of an Org-mode Template</title>
+      <link>https://pavodive.github.io/posts/bash_orgmode_certificate/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/posts/bash_orgmode_certificate/</guid>
+      <description>I have an org-mode template of a document. I have to edit some information in it, and export it to text and then to pdf. I do it with a bash script</description>
+    </item>
     <item>
       <title>Automating RMarkdown Rendering and PDF Merging with Bash</title>
-      <link>http://localhost:1313/posts/bash_scripts_rmarkdown/</link>
+      <link>https://pavodive.github.io/posts/bash_scripts_rmarkdown/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bash_scripts_rmarkdown/</guid>
+      <guid>https://pavodive.github.io/posts/bash_scripts_rmarkdown/</guid>
       <description>I used bash to automate the rendering of hundreds of Rmarkdown files and the merging of the resulting PDFs</description>
     </item>
   </channel>

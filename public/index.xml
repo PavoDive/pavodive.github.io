@@ -2,72 +2,86 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Reminders for Future Me</title>
-    <link>http://localhost:1313/</link>
+    <link>https://pavodive.github.io/</link>
     <description>Recent content on Reminders for Future Me</description>
     <image>
       <title>Reminders for Future Me</title>
-      <url>http://localhost:1313/images/papermod-cover.png</url>
-      <link>http://localhost:1313/images/papermod-cover.png</link>
+      <url>https://pavodive.github.io/images/papermod-cover.png</url>
+      <link>https://pavodive.github.io/images/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.144.1</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <copyright>pavodive</copyright>
-    <lastBuildDate>Mon, 24 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://pavodive.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bash Script for Edition and Exporting of an Org-mode Template</title>
+      <link>https://pavodive.github.io/posts/bash_orgmode_certificate/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/posts/bash_orgmode_certificate/</guid>
+      <description>I have an org-mode template of a document. I have to edit some information in it, and export it to text and then to pdf. I do it with a bash script</description>
+    </item>
+    <item>
+      <title>Adding Page Numbers to a PDF Document</title>
+      <link>https://pavodive.github.io/posts/superimpose_page_number_pdf/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/posts/superimpose_page_number_pdf/</guid>
+      <description>Add page numbers to an existing pdf with Latex</description>
+    </item>
     <item>
       <title>Configure mu4e for gmail accounts in emacs</title>
-      <link>http://localhost:1313/posts/configuring-mu4e-gmail/</link>
+      <link>https://pavodive.github.io/posts/configuring-mu4e-gmail/</link>
       <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/configuring-mu4e-gmail/</guid>
+      <guid>https://pavodive.github.io/posts/configuring-mu4e-gmail/</guid>
       <description>This post shows how to configure mu4e for gmail accounts in emacs</description>
     </item>
     <item>
       <title>Automating RMarkdown Rendering and PDF Merging with Bash</title>
-      <link>http://localhost:1313/posts/bash_scripts_rmarkdown/</link>
+      <link>https://pavodive.github.io/posts/bash_scripts_rmarkdown/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bash_scripts_rmarkdown/</guid>
+      <guid>https://pavodive.github.io/posts/bash_scripts_rmarkdown/</guid>
       <description>I used bash to automate the rendering of hundreds of Rmarkdown files and the merging of the resulting PDFs</description>
     </item>
     <item>
       <title>RSS with elfeed in emacs</title>
-      <link>http://localhost:1313/posts/emacs_rss_elfeed/</link>
+      <link>https://pavodive.github.io/posts/emacs_rss_elfeed/</link>
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/emacs_rss_elfeed/</guid>
+      <guid>https://pavodive.github.io/posts/emacs_rss_elfeed/</guid>
       <description>This is how I configured elfeed to have all the blogs I like together</description>
     </item>
     <item>
       <title>Basic Merge Pandas Operations</title>
-      <link>http://localhost:1313/posts/merge_pandas_operations/</link>
+      <link>https://pavodive.github.io/posts/merge_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/merge_pandas_operations/</guid>
+      <guid>https://pavodive.github.io/posts/merge_pandas_operations/</guid>
       <description>Pandas merge, pandas join</description>
     </item>
     <item>
       <title>Basic Pandas Operations</title>
-      <link>http://localhost:1313/posts/basic_pandas_operations/</link>
+      <link>https://pavodive.github.io/posts/basic_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/basic_pandas_operations/</guid>
+      <guid>https://pavodive.github.io/posts/basic_pandas_operations/</guid>
       <description>Pandas drop columns, reorder columns, change name of columns</description>
     </item>
     <item>
       <title>Basic Time Pandas Operations</title>
-      <link>http://localhost:1313/posts/time_pandas_operations/</link>
+      <link>https://pavodive.github.io/posts/time_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/time_pandas_operations/</guid>
+      <guid>https://pavodive.github.io/posts/time_pandas_operations/</guid>
       <description>pandas date conversion filtering, pandas date filtering</description>
     </item>
     <item>
       <title>Paquete spanish2 para R</title>
-      <link>http://localhost:1313/posts/spanish2/</link>
+      <link>https://pavodive.github.io/posts/spanish2/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/spanish2/</guid>
+      <guid>https://pavodive.github.io/posts/spanish2/</guid>
       <description>Paquete para convertir números a su equivalente en texto en Español con R</description>
     </item>
     <item>
       <title>Writing an R package with Emacs and ESS</title>
-      <link>http://localhost:1313/posts/writing-r-package-emacs/</link>
+      <link>https://pavodive.github.io/posts/writing-r-package-emacs/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/writing-r-package-emacs/</guid>
+      <guid>https://pavodive.github.io/posts/writing-r-package-emacs/</guid>
       <description>Step by step guide to write R packages with emacs</description>
     </item>
   </channel>

@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog on Reminders for Future Me</title>
-    <link>http://localhost:1313/tags/blog/</link>
+    <link>https://pavodive.github.io/tags/blog/</link>
     <description>Recent content in Blog on Reminders for Future Me</description>
     <image>
       <title>Reminders for Future Me</title>
-      <url>http://localhost:1313/images/papermod-cover.png</url>
-      <link>http://localhost:1313/images/papermod-cover.png</link>
+      <url>https://pavodive.github.io/images/papermod-cover.png</url>
+      <link>https://pavodive.github.io/images/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.144.1</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <copyright>pavodive</copyright>
     <lastBuildDate>Wed, 29 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pavodive.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RSS with elfeed in emacs</title>
-      <link>http://localhost:1313/posts/emacs_rss_elfeed/</link>
+      <link>https://pavodive.github.io/posts/emacs_rss_elfeed/</link>
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/emacs_rss_elfeed/</guid>
+      <guid>https://pavodive.github.io/posts/emacs_rss_elfeed/</guid>
       <description>This is how I configured elfeed to have all the blogs I like together</description>
     </item>
   </channel>

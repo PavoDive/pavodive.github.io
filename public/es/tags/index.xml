@@ -2,79 +2,86 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Recordatorios Para Mi Yo Futuro</title>
-    <link>http://localhost:1313/es/tags/</link>
+    <link>https://pavodive.github.io/es/tags/</link>
     <description>Recent content in Tags on Recordatorios Para Mi Yo Futuro</description>
     <image>
       <title>Recordatorios Para Mi Yo Futuro</title>
-      <url>http://localhost:1313/images/papermod-cover.png</url>
-      <link>http://localhost:1313/images/papermod-cover.png</link>
+      <url>https://pavodive.github.io/images/papermod-cover.png</url>
+      <link>https://pavodive.github.io/images/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.144.1</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>es</language>
     <copyright>pavodive</copyright>
-    <lastBuildDate>Mon, 24 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/es/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Emacs</title>
-      <link>http://localhost:1313/es/tags/emacs/</link>
-      <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/tags/emacs/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Mu4e</title>
-      <link>http://localhost:1313/es/tags/mu4e/</link>
-      <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/tags/mu4e/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://pavodive.github.io/es/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bash</title>
-      <link>http://localhost:1313/es/tags/bash/</link>
-      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/tags/bash/</guid>
+      <link>https://pavodive.github.io/es/tags/bash/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/es/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Shell</title>
-      <link>http://localhost:1313/es/tags/shell/</link>
-      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/tags/shell/</guid>
+      <link>https://pavodive.github.io/es/tags/shell/</link>
+      <pubDate>Sun, 30 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/es/tags/shell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Latex</title>
+      <link>https://pavodive.github.io/es/tags/latex/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/es/tags/latex/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Emacs</title>
+      <link>https://pavodive.github.io/es/tags/emacs/</link>
+      <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/es/tags/emacs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mu4e</title>
+      <link>https://pavodive.github.io/es/tags/mu4e/</link>
+      <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/es/tags/mu4e/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>http://localhost:1313/es/tags/blog/</link>
+      <link>https://pavodive.github.io/es/tags/blog/</link>
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/tags/blog/</guid>
+      <guid>https://pavodive.github.io/es/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Pandas</title>
-      <link>http://localhost:1313/es/tags/pandas/</link>
+      <link>https://pavodive.github.io/es/tags/pandas/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/tags/pandas/</guid>
+      <guid>https://pavodive.github.io/es/tags/pandas/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/es/tags/python/</link>
+      <link>https://pavodive.github.io/es/tags/python/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/tags/python/</guid>
+      <guid>https://pavodive.github.io/es/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>ESS</title>
-      <link>http://localhost:1313/es/tags/ess/</link>
+      <link>https://pavodive.github.io/es/tags/ess/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/tags/ess/</guid>
+      <guid>https://pavodive.github.io/es/tags/ess/</guid>
       <description></description>
     </item>
     <item>
       <title>R</title>
-      <link>http://localhost:1313/es/tags/r/</link>
+      <link>https://pavodive.github.io/es/tags/r/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/tags/r/</guid>
+      <guid>https://pavodive.github.io/es/tags/r/</guid>
       <description></description>
     </item>
   </channel>

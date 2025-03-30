@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Latex on Recordatorios Para Mi Yo Futuro</title>
+    <link>https://pavodive.github.io/es/tags/latex/</link>
+    <description>Recent content in Latex on Recordatorios Para Mi Yo Futuro</description>
+    <image>
+      <title>Recordatorios Para Mi Yo Futuro</title>
+      <url>https://pavodive.github.io/images/papermod-cover.png</url>
+      <link>https://pavodive.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>es</language>
+    <copyright>pavodive</copyright>
+    <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://pavodive.github.io/es/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Añadiendo Números de Página a Documento PDF</title>
+      <link>https://pavodive.github.io/es/posts/superimpose_page_number_pdf/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/es/posts/superimpose_page_number_pdf/</guid>
+      <description>Añadir números de página a un pdf con LaTeX</description>
+    </item>
+  </channel>
+</rss>

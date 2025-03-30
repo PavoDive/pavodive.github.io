@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on Reminders for Future Me</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>https://pavodive.github.io/tags/python/</link>
     <description>Recent content in Python on Reminders for Future Me</description>
     <image>
       <title>Reminders for Future Me</title>
-      <url>http://localhost:1313/images/papermod-cover.png</url>
-      <link>http://localhost:1313/images/papermod-cover.png</link>
+      <url>https://pavodive.github.io/images/papermod-cover.png</url>
+      <link>https://pavodive.github.io/images/papermod-cover.png</link>
     </image>
-    <generator>Hugo -- 0.144.1</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <copyright>pavodive</copyright>
     <lastBuildDate>Sat, 18 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pavodive.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Basic Merge Pandas Operations</title>
-      <link>http://localhost:1313/posts/merge_pandas_operations/</link>
+      <link>https://pavodive.github.io/posts/merge_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/merge_pandas_operations/</guid>
+      <guid>https://pavodive.github.io/posts/merge_pandas_operations/</guid>
       <description>Pandas merge, pandas join</description>
     </item>
     <item>
       <title>Basic Pandas Operations</title>
-      <link>http://localhost:1313/posts/basic_pandas_operations/</link>
+      <link>https://pavodive.github.io/posts/basic_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/basic_pandas_operations/</guid>
+      <guid>https://pavodive.github.io/posts/basic_pandas_operations/</guid>
       <description>Pandas drop columns, reorder columns, change name of columns</description>
     </item>
     <item>
       <title>Basic Time Pandas Operations</title>
-      <link>http://localhost:1313/posts/time_pandas_operations/</link>
+      <link>https://pavodive.github.io/posts/time_pandas_operations/</link>
       <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/time_pandas_operations/</guid>
+      <guid>https://pavodive.github.io/posts/time_pandas_operations/</guid>
       <description>pandas date conversion filtering, pandas date filtering</description>
     </item>
   </channel>
