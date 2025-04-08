@@ -12,8 +12,22 @@
     <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <copyright>pavodive</copyright>
-    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pavodive.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pandas</title>
+      <link>https://pavodive.github.io/tags/pandas/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/tags/pandas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://pavodive.github.io/tags/python/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/tags/python/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Bash</title>
       <link>https://pavodive.github.io/tags/bash/</link>
@@ -54,20 +68,6 @@
       <link>https://pavodive.github.io/tags/blog/</link>
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
       <guid>https://pavodive.github.io/tags/blog/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pandas</title>
-      <link>https://pavodive.github.io/tags/pandas/</link>
-      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/tags/pandas/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>https://pavodive.github.io/tags/python/</link>
-      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://pavodive.github.io/tags/python/</guid>
       <description></description>
     </item>
     <item>

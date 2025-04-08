@@ -2,21 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pavodive.github.io/es/tags/bash/</loc>
-    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://pavodive.github.io/tags/bash/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://pavodive.github.io/es/tags/bash/"
-                />
-  </url><url>
     <loc>https://pavodive.github.io/es/categories/</loc>
-    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +16,7 @@
                 />
   </url><url>
     <loc>https://pavodive.github.io/es/series/how-to/</loc>
-    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -41,8 +28,34 @@
                 href="https://pavodive.github.io/es/series/how-to/"
                 />
   </url><url>
+    <loc>https://pavodive.github.io/es/categories/pandas/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/categories/pandas/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/categories/pandas/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/es/tags/pandas/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/tags/pandas/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/tags/pandas/"
+                />
+  </url><url>
     <loc>https://pavodive.github.io/es/posts/</loc>
-    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -54,8 +67,34 @@
                 href="https://pavodive.github.io/es/posts/"
                 />
   </url><url>
+    <loc>https://pavodive.github.io/es/categories/python/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/categories/python/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/categories/python/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/es/tags/python/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/tags/python/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/tags/python/"
+                />
+  </url><url>
     <loc>https://pavodive.github.io/es/</loc>
-    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -68,7 +107,7 @@
                 />
   </url><url>
     <loc>https://pavodive.github.io/es/series/</loc>
-    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -78,6 +117,45 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://pavodive.github.io/es/series/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/es/posts/swirly/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/posts/swirly/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/posts/swirly/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/es/tags/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/tags/"
+                />
+  </url><url>
+    <loc>https://pavodive.github.io/es/tags/bash/</loc>
+    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://pavodive.github.io/tags/bash/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://pavodive.github.io/es/tags/bash/"
                 />
   </url><url>
     <loc>https://pavodive.github.io/es/categories/shell/</loc>
@@ -104,19 +182,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://pavodive.github.io/es/tags/shell/"
-                />
-  </url><url>
-    <loc>https://pavodive.github.io/es/tags/</loc>
-    <lastmod>2025-03-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://pavodive.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://pavodive.github.io/es/tags/"
                 />
   </url><url>
     <loc>https://pavodive.github.io/es/posts/bash_orgmode_certificate/</loc>
@@ -299,45 +364,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://pavodive.github.io/es/posts/merge_pandas_operations/"
-                />
-  </url><url>
-    <loc>https://pavodive.github.io/es/tags/pandas/</loc>
-    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://pavodive.github.io/tags/pandas/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://pavodive.github.io/es/tags/pandas/"
-                />
-  </url><url>
-    <loc>https://pavodive.github.io/es/categories/python/</loc>
-    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://pavodive.github.io/categories/python/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://pavodive.github.io/es/categories/python/"
-                />
-  </url><url>
-    <loc>https://pavodive.github.io/es/tags/python/</loc>
-    <lastmod>2025-01-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://pavodive.github.io/tags/python/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://pavodive.github.io/es/tags/python/"
                 />
   </url><url>
     <loc>https://pavodive.github.io/es/posts/writing-r-package-emacs/</loc>

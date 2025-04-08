@@ -12,8 +12,15 @@
     <generator>Hugo -- 0.145.0</generator>
     <language>en</language>
     <copyright>pavodive</copyright>
-    <lastBuildDate>Sun, 30 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://pavodive.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swirly: a CLI-based tool to learn python</title>
+      <link>https://pavodive.github.io/posts/swirly/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://pavodive.github.io/posts/swirly/</guid>
+      <description>Swirly is a CLI tool to learn any python package, similar to the R package Swirl</description>
+    </item>
     <item>
       <title>Bash Script for Edition and Exporting of an Org-mode Template</title>
       <link>https://pavodive.github.io/posts/bash_orgmode_certificate/</link>
